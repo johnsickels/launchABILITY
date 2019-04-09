@@ -1,5 +1,3 @@
-
-
 console.log("app.js is working");
 
   // Initialize Firebase
@@ -36,11 +34,3 @@ console.log("app.js is working");
     var credential = error.credential;
     // ...
   });
-
-
-  
-
-
-
-
-//Add Auth
