@@ -9,3 +9,7 @@
     background-image: url("https://www.universetoday.com/wp-content/uploads/2009/09/SED_wall_1920x1200.jpg");
     color: whitesmoke;
 }
+
+#login-btn {
+  color: rgb(245,60,32);
+}
