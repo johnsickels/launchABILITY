@@ -5,6 +5,7 @@
 
   /* black color: rgb(11,11,11) */
 
-  /* body {
+  body {
     background-image: url("https://www.universetoday.com/wp-content/uploads/2009/09/SED_wall_1920x1200.jpg");
-} */
+    color: whitesmoke;
+}
