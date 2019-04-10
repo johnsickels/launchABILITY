@@ -8,48 +8,67 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<<<<<<< HEAD:index.html
-    <link rel="stylesheet" href="./assets/css/style.css">
-  </head>
-  <body>
-      <h1>Project One Ideas:</h1>
-      <h2>Food</h2>
-      <h2>Rocket Launch</h2>
-
-      <h3>API Pulls for Launch Library will look like this..</h3>
-      <div id="launch-library-api"></div>
-      <h2>Music</h2>
-
-
-=======
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
-  <body>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="main-nav">
+  <body id="settings-body">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-custom" id="main-nav">
           <ul class="nav nav-tabs">
               <li class="nav-item">
-                <a class="nav-link active" href="login.html" id="login-btn">Log-In</a>
+                <a class="nav-link" href="login.html" id="login-btn">Log-In</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id="settings-btn">Settings</a>
+                <a class="nav-link active" href="#" id="settings-btn-active">Settings</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="dashboard.html" id="dashboard-btn">Dashboard</a>
               </li>
             </ul>
         </nav>
-      <h1>Settings</h1>
->>>>>>> ddf1d208df841abf28c266de8870672c2d5ce0af:settings.html
+        <div class="container">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <h1>Launch Pads</h1>
+                    <img src="https://www.worldpress.org/images/maps/world_600w.gif" alt="World map" id="map-select" >
+                    <button type="button" class="btn btn-primary btn-lg" id="save-btn">Save Rockets</button>
+                  </div>
+                  <div class="col-sm-6">
+                      <h1>Select Your Rockets</h1>
+                      <div id="list-example" class="list-group">
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">Cape Canaveral</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-2">Vandenberg</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-3">China</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-4">Russia</a>
+                          </div>
+                          <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example" id="list-content">
+                            <h3 id="list-item-1">Cape Canaveral</h4>
+                            <p>Falcon Heavy</p>
+                            <p>Falcon 9</p>
+                            <p>Atlas 5</p>
+                            <h3 id="list-item-2">Vandenberg</h4>
+                            <p>Falcon Heavy</p>
+                            <p>Falcon 9</p>
+                            <p>Atlas 5</p>
+                            <h3 id="list-item-3">China</h4>
+                            <p>Falcon Heavy</p>
+                            <p>Falcon 9</p>
+                            <p>Atlas 5</p>
+                            <h3 id="list-item-4">Russia</h4>
+                            <p>Falcon Heavy</p>
+                            <p>Falcon 9</p>
+                            <p>Atlas 5</p>
+                          </div>
+                  </div>
+                </div>
+              </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<<<<<<< HEAD:index.html
-    <script src="./assets/javascript/app.js"></script>
-=======
+
+
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <script src="assets/javascript/app.js"></script>
->>>>>>> ddf1d208df841abf28c266de8870672c2d5ce0af:settings.html
+
   </body>
 </html>
