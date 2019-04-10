@@ -14,6 +14,7 @@
 #settings-body {
   background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BloSxjK/beginning-with-a-spinning-earth-in-space-then-zooming-out-to-reveal-the-moon-the-sun-and-then-the-entire-spinning-milky-way-galaxy_e1_at4ayg__F0000.png");
   color: whitesmoke;
+  position: relative;
 }
 
 #login-btn-active {
@@ -35,4 +36,39 @@
   margin-top: 50%;
   color: black;
 }
+
+
+.navbar{
+  background-color: black;
+}
+
+
+#list-example {
+  height: 100%;
+  width: 30%;
+  overflow-y: scroll;
+  float: left;
+
+}
+
+#list-content {
+  height: 300px;;
+  width: 70%;
+  overflow-y: scroll;
+  float: left;
+  background-color: white;
+  color: black;
+}
+
+#map-select {
+ width: 100%;
+}
+
+#save-btn {
+  margin-top: 10px;
+}
+/* #launch-btn:hover{
+  width: 120%;
+  height: 120px;
+} */
 
