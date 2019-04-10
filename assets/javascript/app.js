@@ -1,5 +1,3 @@
-
-
 console.log("app.js is working");
 
   // Initialize Firebase
@@ -34,6 +32,7 @@ console.log("app.js is working");
     // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
     // ...
+<<<<<<< HEAD
   });  
 
 $.ajax({
@@ -50,3 +49,6 @@ console.log("Twitter Token Response "+response);
 
 
 //Add Auth
+=======
+  });
+>>>>>>> eec7a4585fd51b6f9d8e05e35fda00ed20abb729
