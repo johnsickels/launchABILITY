@@ -32,23 +32,36 @@ console.log("app.js is working");
     // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
     // ...
-<<<<<<< HEAD
   });  
 
-$.ajax({
-url:"https://api.twitter.com/oauth2/token?grant_type=client_credentials",
-type:"POST",
-grant_type:'client_credentials'
-}).then(function(response){
-console.log("Twitter Token Response "+response);
+var querystring = "https://launchlibrary.net/1.4/location/"
+var location;
+
+$("#canaveral-button").on("click",function(){
+location="next=5&locationid=87"
 });
+
+
+
+$.ajax({
+  url: querystring+location;
+  type: "GET"
+}).then(function(response){
+  response.
+});
+
+// $.ajax({
+// url:"https://api.twitter.com/oauth2/token?grant_type=client_credentials",
+// type:"POST",
+// grant_type:'client_credentials'
+// }).then(function(response){
+// console.log("Twitter Token Response "+response);
+// });
 
   
 
 
 
 
-//Add Auth
-=======
-  });
->>>>>>> eec7a4585fd51b6f9d8e05e35fda00ed20abb729
+// //Add Auth
+//   });
