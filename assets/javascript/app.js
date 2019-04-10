@@ -13,7 +13,6 @@ console.log("app.js is working");
   };
   firebase.initializeApp(config);
 
-
   var provider = new firebase.auth.GoogleAuthProvider();
 
   firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -35,8 +34,15 @@ console.log("app.js is working");
     // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
     // ...
-  });
+  });  
 
+$.ajax({
+url:"https://api.twitter.com/oauth2/token?grant_type=client_credentials",
+type:"POST",
+grant_type:'client_credentials'
+}).then(function(response){
+console.log("Twitter Token Response "+response);
+});
 
   
 
