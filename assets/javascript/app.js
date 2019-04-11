@@ -49,7 +49,7 @@ $.ajax({
 }).then(function(response){
   console.log(response);
   response.launches.forEach(function(launch){
-
+    
   $("#list-content").append($("<a>").text(launch.name).attr("href","./dashboard.html?id="+launch.id));
 
   })

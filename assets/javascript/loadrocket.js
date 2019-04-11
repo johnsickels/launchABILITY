@@ -3,6 +3,7 @@ $.urlParam = function(name){
 	return results[1] || 0;
 }
 try{
+console.log(sessionStorage.getItem("user"));
 alert("Welcome "+sessionStorage.getItem("user").displayName);}
 catch{console.log("UsernameError")}
 console.log($.urlParam('id'));
