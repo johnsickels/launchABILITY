@@ -42,6 +42,14 @@
 .navbar{
   background-color: black;
   font-family: 'Orbitron', sans-serif;
+  padding-bottom: 2px;
+}
+
+
+
+#logo {
+  height:50px;
+  margin-left: 50%;
 }
 
 
