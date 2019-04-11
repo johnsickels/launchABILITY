@@ -34,22 +34,28 @@ console.log("app.js is working");
     // ...
   });  
 
-var querystring = "https://launchlibrary.net/1.4/location/"
-var location;
+// var querystring = "https://launchlibrary.net/1.4/launch?"
+// var location;
 
-$("#canaveral-button").on("click",function(){
-location="next=5&locationid=87"
-});
-
-
+$("#save-btn").on("click",function(){
+// location="&next=5&locationid=87";
+// querystring+=location;
+// console.log(querystring);
 
 $.ajax({
-  url: querystring+location;
-  type: "GET"
+  type: 'GET',
+  url: "https://launchlibrary.net/1.4/launch?next=5&locationid=87"
+  
 }).then(function(response){
-  response.
-});
+  console.log(response);
+  response.launches.forEach(function(launch){
 
+  $("#list-content").append($("<p>").text(launch.name));
+
+  })
+  
+});
+});
 // $.ajax({
 // url:"https://api.twitter.com/oauth2/token?grant_type=client_credentials",
 // type:"POST",
