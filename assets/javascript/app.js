@@ -11,7 +11,6 @@ console.log("app.js is working");
   };
   firebase.initializeApp(config);
 
-
   var provider = new firebase.auth.GoogleAuthProvider();
 
   firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -33,4 +32,42 @@ console.log("app.js is working");
     // The firebase.auth.AuthCredential type that was used.
     var credential = error.credential;
     // ...
-  });
+  });  
+
+// var querystring = "https://launchlibrary.net/1.4/launch?"
+// var location;
+
+$("#save-btn").on("click",function(){
+// location="&next=5&locationid=87";
+// querystring+=location;
+// console.log(querystring);
+
+$.ajax({
+  type: 'GET',
+  url: "https://launchlibrary.net/1.4/launch?next=5&locationid=87"
+  
+}).then(function(response){
+  console.log(response);
+  response.launches.forEach(function(launch){
+
+  $("#list-content").append($("<p>").text(launch.name));
+
+  })
+  
+});
+});
+// $.ajax({
+// url:"https://api.twitter.com/oauth2/token?grant_type=client_credentials",
+// type:"POST",
+// grant_type:'client_credentials'
+// }).then(function(response){
+// console.log("Twitter Token Response "+response);
+// });
+
+  
+
+
+
+
+// //Add Auth
+//   });
