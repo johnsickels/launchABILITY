@@ -9,25 +9,38 @@
 #dashboard-body {
   background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
   color: whitesmoke;
+  font-family: 'Play', sans-serif;
+
 }
 
 #settings-body {
   background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BloSxjK/beginning-with-a-spinning-earth-in-space-then-zooming-out-to-reveal-the-moon-the-sun-and-then-the-entire-spinning-milky-way-galaxy_e1_at4ayg__F0000.png");
   color: whitesmoke;
   position: relative;
+  font-family: 'Play', sans-serif;
 }
 
 #login-btn-active {
   color: rgb(245,60,32);
+  background-color: white;
+  border-color:rgb(245,60,32);
+  border-width: 2px;
 }
 
 #settings-btn-active {
   color: rgb(245,60,32);
+  background-color: white;
+  border-color:rgb(245,60,32);
+  border-width: 2px;
 }
 
 #dashboard-btn-active {
   color: rgb(245,60,32);
+  background-color: white;
+  border-color:rgb(245,60,32);
+  border-width: 2px;
 }
+
 
 #launch-btn {
   width: 100%;
@@ -44,7 +57,6 @@
   font-family: 'Orbitron', sans-serif;
   padding-bottom: 2px;
 }
-
 
 
 #logo {
@@ -68,6 +80,13 @@
   float: left;
   background-color: white;
   color: black;
+}
+
+#twitter-box {
+  height: 500px;
+  width: 100%;
+  overflow-y: scroll;
+  float: left;
 }
 
 #map-select {
@@ -94,6 +113,12 @@
 #load-more-btn{
   float: right;
 }
+
+/* font-family: 'Orbitron', sans-serif;
+font-family: 'VT323', monospace;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Source Code Pro', monospace;
+font-family: 'Play', sans-serif; */
 
 
 /* #launch-btn:hover{
