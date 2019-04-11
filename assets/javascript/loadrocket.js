@@ -2,7 +2,9 @@ $.urlParam = function(name){
 	var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
 	return results[1] || 0;
 }
-
+try{
+alert("Welcome "+sessionStorage.getItem("user").displayName);}
+catch{console.log("UsernameError")}
 console.log($.urlParam('id'));
 
 $.ajax({
