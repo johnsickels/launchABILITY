@@ -8,10 +8,12 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Orbitron|Righteous|Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Play|Roboto+Mono|Source+Code+Pro|VT323" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body id="dashboard-body">
+
+    <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-custom" id="main-nav">
           <ul class="nav nav-tabs">
               <li class="nav-item">
@@ -24,7 +26,10 @@
                 <a class="nav-link active" href="#" id="dashboard-btn-active">Dashboard</a>
               </li>
             </ul>
+            <img src="./assets/images/logo-2.png" id="logo">
         </nav>
+
+    <!-- Launch Info card     -->
       <div class="container-fluid">
            <div class ="row">
              <div class ="col-sm-7">
@@ -32,36 +37,38 @@
               <div class="card mb-3" style="max-width: 100%;">
                     <div class="row no-gutters">
                       <div class="col-md-4">
-                        <img id="rocket-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Falcon_Heavy_cropped.jpg/270px-Falcon_Heavy_cropped.jpg" class="card-img" alt="...">
+                        <img id="rocket-image" src="./assets/images/falcon-heavy.png" class="card-img" alt="...">
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
                           <h5 class="card-title">Launch Info</h5>
-                          <h4 class="card-text">Countdown:</h4>
-                          <p class="card-text">Location:</p>
+                          <p class="card-text">Countdown: <span id="countdown"></span></p>
+                          <p class="card-text">Location: <span id="launch-location"></span></p>
                           <p class="card-text">Date/Time: <span id="launch-start"></span></p>
-                          <p class="card-text">PAYLOAD:</p>
+                          <p class="card-text">Payload: <span id="payload"></span></p>
                           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
-                    </div>
-                </div>
+                      </div>
+                   </div>
+              </div>
+            <!-- <button type="button" class="btn btn-warning btn-lg" id="load-more-btn">Load more Launches</button>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/ojvu2u28CIY"
+               frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
             </div>
-            <button type="button" class="btn btn-warning btn-lg" id="load-more-btn">Load more Launches</button>
-              <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ojvu2u28CIY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class ="col-sm-4">
-             <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example" id="list-content">
-                            <h3 id="list-item-1">Cape Canaveral</h4>
-                            <p>Falcon Heavy</p>
-                            <p>Falcon 9</p>
-                            <p>Atlas 5</p>
-                          </div> -->
-            </div>
-            <div class ="col-sm-4">
             
-             </div>
-           </div>
+            <div class ="col-sm-5">
+                <h2>Twitter Feed</h2>
+              <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example" id="twitter-box">
+                   <a class="twitter-timeline" href="https://twitter.com/SpaceX?ref_src=twsrc%5Etfw">Tweets by SpaceX</a> 
+                   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>        
+              </div>
+            </div>
         </div>
+    </div>
+
+      
+      <h1 id="launch-name">Launch Name</h1>
+      <p id="launch-start"></p>
       <h1>Dashboard</h1>
       
       
