@@ -74,12 +74,17 @@
 }
 
 #list-content {
-  height: 300px;;
+  height: 322px;;
   width: 70%;
   overflow-y: scroll;
   float: left;
-  background-color: white;
-  color: black;
+  background-color:black;
+  opacity: 0.9;
+  color:red;
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
+  border-radius: 3px;
 }
 
 #twitter-box {
@@ -114,6 +119,18 @@
   float: right;
 }
 
+.list-text {
+  color:gray;
+}
+
+.list-group-item {
+  background-color: black;
+  opacity: 0.9;
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
+  border-radius: 3px;
+}
 /* font-family: 'Orbitron', sans-serif;
 font-family: 'VT323', monospace;
 font-family: 'Roboto Mono', monospace;
