@@ -123,13 +123,16 @@
 #rocket-card {
 border-style: solid;
 border-width: 3px;
-border-color: slategray;
+border-color: steelblue;
 }
 
 .card-body{ 
   color: black;
   background-color: bisque;
   height: 100%;
+  border-left-style: solid;
+  border-width: 2px;
+  border-color: steelblue;
 }
 
 #main-card{
