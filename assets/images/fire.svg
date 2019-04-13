@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="fire" width="13.949mm" height="19.976mm" version="1.1" viewBox="0 0 13.949 19.976" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="filter1596" x="-.19106" y="-.10083" width="1.3821" height="1.2017" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.5570618"/>
+  </filter>
+  <filter id="filter1608" x="-.052108" y="-.027499" width="1.1042" height="1.055" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="0.27092045"/>
+  </filter>
+ </defs>
+ <g transform="translate(242.08 -94.244)">
+  <path transform="matrix(1.0124 0 0 .76676 307.23 -88.791)" d="m-539.81 240.47s-2.0594 2.8503-2.1112 5.3128c-0.14291 6.786 5.9531 18.332 5.9531 18.332s6.6673-12.733 6.5201-17.103c-0.13524-4.0153-2.9667-6.5412-2.9667-6.5412z" fill="#fea" filter="url(#filter1608)"/>
+  <path d="m-237.6 95.581s-1.1548 1.5984-1.1839 2.9793c-0.0801 3.8055 3.3384 10.28 3.3384 10.28s3.7389-7.1406 3.6563-9.5912c-0.0758-2.2517-1.6636-3.6682-1.6636-3.6682z" fill="#f4eed7" filter="url(#filter1596)"/>
+ </g>
+</svg>

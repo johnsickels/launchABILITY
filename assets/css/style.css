@@ -146,6 +146,15 @@ border-color: steelblue;
 #load-more-btn{
   float: right;
 }
+svg{
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  overflow: visible
+  /* vertical-align: bottom; */
+}
 
 /* font-family: 'Orbitron', sans-serif;
 font-family: 'VT323', monospace;
