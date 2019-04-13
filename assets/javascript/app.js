@@ -42,74 +42,73 @@ $("#pad-select-1").on("click", function () {
   // querystring+=location;
   // console.log(querystring);
 
-<<<<<<< HEAD
-$.ajax({
-  type: 'GET',
-  url: "https://launchlibrary.net/1.4/launch?next=5&locationid=87"
-  
-}).then(function(response){
-  console.log(response);
-  response.launches.forEach(function(launch){
-    
-  $("#list-content").append($("<a>").text(launch.name).attr("href","./dashboard.html?id="+launch.id));
-=======
   $.ajax({
     type: 'GET',
     url: "https://launchlibrary.net/1.4/launch?next=5&locationid=87"
->>>>>>> a4006b0a161e24de6c8787c6f292f057d6bd93ec
 
   }).then(function (response) {
     console.log(response);
-    var rocketDiv = $("<div>");
-    response.launches.forEach(function (launch) {
-      $(rocketDiv).append($("<a>").text(launch.name).attr("href", "./dashboard.html?id=" + launch.id));
-    });
-    $("#list-content").prepend(rocketDiv);
-    $("#list-content").prepend($("<h3>").text("Cape Canaveral, FL"));
-  })
-
-});
-$("#pad-select-2").on("click", function () {
-  // location="&next=5&locationid=87";
-  // querystring+=location;
-  // console.log(querystring);
-
-  $.ajax({
-    type: 'GET',
-    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=166"
-
-  }).then(function (response) {
-    console.log(response);
-    var rocketDiv = $("<div>");
     response.launches.forEach(function (launch) {
 
-      $(rocketDiv).append($("<a>").text(launch.name).attr("href", "./dashboard.html?id=" + launch.id));
+      $("#list-content").append($("<a>").text(launch.name).attr("href", "./dashboard.html?id=" + launch.id));
+      $.ajax({
+        type: 'GET',
+        url: "https://launchlibrary.net/1.4/launch?next=5&locationid=87"
+
+      }).then(function (response) {
+        console.log(response);
+        var rocketDiv = $("<div>");
+        response.launches.forEach(function (launch) {
+          $(rocketDiv).append($("<a>").text(launch.name).attr("href", "./dashboard.html?id=" + launch.id));
+        });
+        $("#list-content").prepend(rocketDiv);
+        $("#list-content").prepend($("<h3>").text("Cape Canaveral, FL"));
+      })
 
     });
-    $("#list-content").prepend(rocketDiv);
-    $("#list-content").prepend($("<h3>").text("Onenui Station, Mahia Peninsula, New Zealand"));
-  });
-});
-$("#pad-select-3").on("click", function () {
-  // location="&next=5&locationid=87";
-  // querystring+=location;
-  // console.log(querystring);
+    $("#pad-select-2").on("click", function () {
+      // location="&next=5&locationid=87";
+      // querystring+=location;
+      // console.log(querystring);
 
-  $.ajax({
-    type: 'GET',
-    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=109"
+      $.ajax({
+        type: 'GET',
+        url: "https://launchlibrary.net/1.4/launch?next=5&locationid=166"
 
-  }).then(function (response) {
-    console.log(response);
-    var rocketDiv = $("<div>");
-    response.launches.forEach(function (launch) {
-      
-      $(rocketDiv).append($("<a>").text(launch.name).attr("href", "./dashboard.html?id=" + launch.id));
+      }).then(function (response) {
+        console.log(response);
+        var rocketDiv = $("<div>");
+        response.launches.forEach(function (launch) {
 
+          $(rocketDiv).append($("<a>").text(launch.name).attr("href", "./dashboard.html?id=" + launch.id));
+
+        });
+        $("#list-content").prepend(rocketDiv);
+        $("#list-content").prepend($("<h3>").text("Onenui Station, Mahia Peninsula, New Zealand"));
+      });
     });
-    $("#list-content").prepend(rocketDiv);
-    $("#list-content").prepend($("<h3>").text("Wallops Island, VA"));
-    
+    $("#pad-select-3").on("click", function () {
+      // location="&next=5&locationid=87";
+      // querystring+=location;
+      // console.log(querystring);
+
+      $.ajax({
+        type: 'GET',
+        url: "https://launchlibrary.net/1.4/launch?next=5&locationid=109"
+
+      }).then(function (response) {
+        console.log(response);
+        var rocketDiv = $("<div>");
+        response.launches.forEach(function (launch) {
+
+          $(rocketDiv).append($("<a>").text(launch.name).attr("href", "./dashboard.html?id=" + launch.id));
+
+        });
+        $("#list-content").prepend(rocketDiv);
+        $("#list-content").prepend($("<h3>").text("Wallops Island, VA"));
+
+      });
+    });
   });
 });
 // $.ajax({
