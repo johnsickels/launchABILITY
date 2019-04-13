@@ -74,100 +74,77 @@ console.log(fire);
 
   console.log("app.js is still working");
   $("#launch-btn").on("click",function(){
-    
+   
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+      sessionStorage.setItem("user", user);
+      console.log(user.displayName);
+      // window.location.href = "/settings.html";
+      var x=1;
+      function flicker(){
+      if(x==1){
+        x=0.8;
+      }
+      else{
+        x=1;
+      }
+      fire.animate({opacity:x},50, mina.linear,flicker);
+      fire2.animate({opacity:0.8},60, mina.linear,flicker);
+      fire.attr({width: '100%', height: '100%', viewBox: "0 0 600 600"});
+      fire.animate({transform:'s1,'+1*x+", "+fire.getBBox().cx+","+fire.getBBox().cy},50, mina.linear,flicker);
+      fire2.animate({transform:'s'+x*0.95+','+1*x*1.25},40, mina.linear,flicker);
+      };
+      
+      
+      
+      // fire.animate({opacity:1},500, mina.linear);
+      // setInterval(flicker(1),100);
+      flicker();
+      
+      var y=4;
+      function fire2flicker(){
+       
+      
+        var myMatrix = new Snap.Matrix();
+        myMatrix.scale(4,2); 
+      
+      fire.animate({transform: 't100,-1500'},150, mina.linear,function(){
+      
+      
+      
+      });
+      }
+      
+      
+          
+          s.animate({transform:'t0,-1500 r0 s0.9'},4000, mina.linear, function(){
+      
+            window.location.replace("/settings.html");
+      
+          });
+
+      // ...
+    }).catch(function(error) {
+      // Handle Errors here.
+      console.log("error");
+      console.log(error.message);
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    });  
+
+
+
+
 // fire.transform("t0,"+rocket.getBBox().height);
-var x=1;
-function flicker(){
-if(x==1){
-  x=0.8;
-}
-else{
-  x=1;
-}
-fire.animate({opacity:x},50, mina.linear,flicker);
-fire2.animate({opacity:0.8},60, mina.linear,flicker);
-fire.attr({width: '100%', height: '100%', viewBox: "0 0 600 600"});
-fire.animate({transform:'s1,'+1*x+", "+fire.getBBox().cx+","+fire.getBBox().cy},50, mina.linear,flicker);
-fire2.animate({transform:'s'+x*0.95+','+1*x*1.25},40, mina.linear,flicker);
-};
 
-
-
-// fire.animate({opacity:1},500, mina.linear);
-// setInterval(flicker(1),100);
-flicker();
-
-var y=4;
-function fire2flicker(){
- 
-
-  var myMatrix = new Snap.Matrix();
-  myMatrix.scale(4,2); 
-
-fire.animate({transform: 't100,-1500'},150, mina.linear,function(){
-
-
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
-    sessionStorage.setItem("user", user);
-    console.log(user.displayName);
-    // ...
-  }).catch(function(error) {
-    // Handle Errors here.
-    console.log("error");
-    console.log(error.message);
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
-  });  
-
-
-
-
-});
-}
-
-// fire2flicker();
-
-  //  s.select("#rocket").animate(
-  //    {opacity:0.5},500, min.linear
-  //  );
-
-
-  //  fire.animate({opacity: 50}, 500, mina.linear);
-    
-    s.animate({transform:'t0,-1500 r0 s0.9'},8000, mina.linear, function(){
-
-      firebase.auth().signInWithPopup(provider).then(function(result) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        sessionStorage.setItem("user", user);
-        console.log(user.displayName);
-        window.location.href = "http://www.w3schools.com";
-        // ...
-      }).catch(function(error) {
-        // Handle Errors here.
-        console.log("error");
-        console.log(error.message);
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-      });  
-
-    });
     
 
 

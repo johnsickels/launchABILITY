@@ -14,4 +14,9 @@ $.ajax({
 }).then(function(response){
 $("#launch-name").text(response.launches[0].name);
 $("#launch-start").text(response.launches[0].windowstart);
+var launchtime = moment(response.launches[0].windowstart, "YYYY-MM-DD HH:mm:ss");
+setInterval(function(){
+console.log();
+$("#countdown").text(moment().diff(launchtime));
+},1000);
 });
