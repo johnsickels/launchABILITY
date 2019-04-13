@@ -53,7 +53,7 @@ $("#pad-select-1").on("click", function () {
     var rocketDiv = $("<div>");
     response.launches.forEach(function (launch) {
 
-      $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" name=" ' + launch.id + '">' + launch.name + '</input>'));
+      $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
 
     });
     $("#list-content").prepend(rocketDiv);
@@ -105,21 +105,21 @@ $("#pad-select-3").on("click", function () {
 
 var rocketIDs = [];
 
-$('.checkbox:checked').each(function () {
-  rocketIDs.push($(this).val());
-});
+$("#save-btn").on("click", (event) => {
+  console.log($(this));
 
-function rocketPush() {
-  console.log(rocketIDs);
+  $('input:checkbox:checked').each(function (index) {
+    console.log("------------------");
+
+    console.log($(this)[0].name)
+    rocketIDs.push($(this).val());
+  });
   for (i = 0; i < rocketIDs.length; i++) {
     dataRef.ref().push({
-      rocketID: rocketID
+      rocketID: rocketIDs
     });
   };
-};
-
-$("#save-btn").on("click", rocketPush());
-
+});
 
 // $.ajax({
 // url:"https://api.twitter.com/oauth2/token?grant_type=client_credentials",
