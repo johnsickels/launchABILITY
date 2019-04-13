@@ -42,7 +42,7 @@ var s = Snap(350,600 );
     var loadPromises = [
       // loadSVG("/assets/images/falconheavy.svg"),
       // loadSVG("/assets/images/fire.svg")
-      loadSVG("/assets/images/combined3.svg")
+      loadSVG("./assets/images/combined3.svg")
     ];
 
     Promise.all(loadPromises).then(function(results) {
