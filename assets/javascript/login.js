@@ -42,7 +42,7 @@ var s = Snap(350,600 );
     var loadPromises = [
       // loadSVG("/assets/images/falconheavy.svg"),
       // loadSVG("/assets/images/fire.svg")
-      loadSVG("./assets/images/combined3.svg")
+      loadSVG("/ProjectOne/assets/images/combined3.svg")
     ];
 
     Promise.all(loadPromises).then(function(results) {
@@ -152,7 +152,7 @@ fire.animate({transform: 't100,-1500'},150, mina.linear,function(){
         var user = result.user;
         sessionStorage.setItem("user", user);
         console.log(user.displayName);
-        window.location.href = "http://www.w3schools.com";
+        window.location.href = "/ProjectOne/settings.html";
         // ...
       }).catch(function(error) {
         // Handle Errors here.
