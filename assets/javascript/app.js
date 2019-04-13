@@ -1,15 +1,17 @@
 // console.log("app.js is working");
 
-//   // Initialize Firebase
-//   var config = {
-//     apiKey: "AIzaSyAvp5DXwstL8tSCTh5OtFVSC-XazUNU5_8",
-//     authDomain: "spacex-cc85a.firebaseapp.com",
-//     databaseURL: "https://spacex-cc85a.firebaseio.com",
-//     projectId: "spacex-cc85a",
-//     storageBucket: "spacex-cc85a.appspot.com",
-//     messagingSenderId: "55107665194"
-//   };
-//   firebase.initializeApp(config);
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyAvp5DXwstL8tSCTh5OtFVSC-XazUNU5_8",
+  authDomain: "spacex-cc85a.firebaseapp.com",
+  databaseURL: "https://spacex-cc85a.firebaseio.com",
+  projectId: "spacex-cc85a",
+  storageBucket: "spacex-cc85a.appspot.com",
+  messagingSenderId: "55107665194"
+};
+firebase.initializeApp(config);
+
+var dataRef = firebase.database();
 
 //   var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -48,69 +50,77 @@ $("#pad-select-1").on("click", function () {
 
   }).then(function (response) {
     console.log(response);
+    var rocketDiv = $("<div>");
     response.launches.forEach(function (launch) {
 
-      $("#list-content").append($("<a>").text(launch.name).attr("href", "./dashboard.html?id=" + launch.id));
-      $.ajax({
-        type: 'GET',
-        url: "https://launchlibrary.net/1.4/launch?next=5&locationid=87"
-
-      }).then(function (response) {
-        console.log(response);
-        var rocketDiv = $("<div>");
-        response.launches.forEach(function (launch) {
-          $(rocketDiv).append($("<a>").text(launch.name).attr("href", "./dashboard.html?id=" + launch.id));
-        });
-        $("#list-content").prepend(rocketDiv);
-        $("#list-content").prepend($("<h3>").text("Cape Canaveral, FL"));
-      })
+      $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" name=" ' + launch.id + '">' + launch.name + '</input>'));
 
     });
-    $("#pad-select-2").on("click", function () {
-      // location="&next=5&locationid=87";
-      // querystring+=location;
-      // console.log(querystring);
-
-      $.ajax({
-        type: 'GET',
-        url: "https://launchlibrary.net/1.4/launch?next=5&locationid=166"
-
-      }).then(function (response) {
-        console.log(response);
-        var rocketDiv = $("<div>");
-        response.launches.forEach(function (launch) {
-
-          $(rocketDiv).append($("<a>").text(launch.name).attr("href", "./dashboard.html?id=" + launch.id));
-
-        });
-        $("#list-content").prepend(rocketDiv);
-        $("#list-content").prepend($("<h3>").text("Onenui Station, Mahia Peninsula, New Zealand"));
-      });
-    });
-    $("#pad-select-3").on("click", function () {
-      // location="&next=5&locationid=87";
-      // querystring+=location;
-      // console.log(querystring);
-
-      $.ajax({
-        type: 'GET',
-        url: "https://launchlibrary.net/1.4/launch?next=5&locationid=109"
-
-      }).then(function (response) {
-        console.log(response);
-        var rocketDiv = $("<div>");
-        response.launches.forEach(function (launch) {
-
-          $(rocketDiv).append($("<a>").text(launch.name).attr("href", "./dashboard.html?id=" + launch.id));
-
-        });
-        $("#list-content").prepend(rocketDiv);
-        $("#list-content").prepend($("<h3>").text("Wallops Island, VA"));
-
-      });
-    });
+    $("#list-content").prepend(rocketDiv);
+    $("#list-content").prepend($("<h3>").text("Cape Canaveral, FL"));
   });
 });
+$("#pad-select-2").on("click", function () {
+  // location="&next=5&locationid=87";
+  // querystring+=location;
+  // console.log(querystring);
+
+  $.ajax({
+    type: 'GET',
+    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=166"
+
+  }).then(function (response) {
+    console.log(response);
+    var rocketDiv = $("<div>");
+    response.launches.forEach(function (launch) {
+
+      $(rocketDiv).append($("<p>").html('<input type="checkbox" name=" ' + launch.id + '">' + launch.name + '</input>'));
+    });
+    // $("#list-content").prepend("<h2>").text
+    $("#list-content").prepend(rocketDiv);
+    $("#list-content").prepend($("<h3>").text("Onenui Station, Mahia Peninsula, New Zealand"));
+  });
+});
+$("#pad-select-3").on("click", function () {
+  // location="&next=5&locationid=87";
+  // querystring+=location;
+  // console.log(querystring);
+
+  $.ajax({
+    type: 'GET',
+    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=109"
+
+  }).then(function (response) {
+    console.log(response);
+    var rocketDiv = $("<div>");
+    response.launches.forEach(function (launch) {
+
+      $(rocketDiv).append($("<p>").html('<input type="checkbox" name=" ' + launch.id + '">' + launch.name + '</input>'));
+    });
+    $("#list-content").prepend(rocketDiv);
+    $("#list-content").prepend($("<h3>").text("Wallops Island, VA"));
+
+  });
+});
+
+var rocketIDs = [];
+
+$('.checkbox:checked').each(function () {
+  rocketIDs.push($(this).val());
+});
+
+function rocketPush() {
+  console.log(rocketIDs);
+  for (i = 0; i < rocketIDs.length; i++) {
+    dataRef.ref().push({
+      rocketID: rocketID
+    });
+  };
+};
+
+$("#save-btn").on("click", rocketPush());
+
+
 // $.ajax({
 // url:"https://api.twitter.com/oauth2/token?grant_type=client_credentials",
 // type:"POST",
