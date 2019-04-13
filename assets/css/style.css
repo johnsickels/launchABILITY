@@ -74,12 +74,30 @@
 }
 
 #list-content {
-  height: 300px;;
+  height: 322px;;
   width: 70%;
   overflow-y: scroll;
   float: left;
-  background-color: white;
-  color: black;
+  background-color:bisque;
+  opacity: 0.9;
+  color:red;
+  border-style: solid;
+  border-width: 2px;
+  border-color: steelblue;
+  border-radius: 3px;
+}
+
+.list-text {
+  color:black;
+}
+
+.list-group-item {
+  background-color:bisque;
+  opacity: 0.9;
+  border-style: solid;
+  border-width: 2px;
+  border-color: steelblue;
+  border-radius: 3px;
 }
 
 #twitter-box {
@@ -102,8 +120,19 @@
   height: 100%;
 }
 
-.card-body{
+#rocket-card {
+border-style: solid;
+border-width: 3px;
+border-color: steelblue;
+}
+
+.card-body{ 
   color: black;
+  background-color: bisque;
+  height: 100%;
+  border-left-style: solid;
+  border-width: 2px;
+  border-color: steelblue;
 }
 
 #main-card{
