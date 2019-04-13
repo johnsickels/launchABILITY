@@ -9,25 +9,38 @@
 #dashboard-body {
   background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
   color: whitesmoke;
+  font-family: 'Play', sans-serif;
+
 }
 
 #settings-body {
   background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BloSxjK/beginning-with-a-spinning-earth-in-space-then-zooming-out-to-reveal-the-moon-the-sun-and-then-the-entire-spinning-milky-way-galaxy_e1_at4ayg__F0000.png");
   color: whitesmoke;
   position: relative;
+  font-family: 'Play', sans-serif;
 }
 
 #login-btn-active {
   color: rgb(245,60,32);
+  background-color: white;
+  border-color:rgb(245,60,32);
+  border-width: 2px;
 }
 
 #settings-btn-active {
   color: rgb(245,60,32);
+  background-color: white;
+  border-color:rgb(245,60,32);
+  border-width: 2px;
 }
 
 #dashboard-btn-active {
   color: rgb(245,60,32);
+  background-color: white;
+  border-color:rgb(245,60,32);
+  border-width: 2px;
 }
+
 
 #launch-btn {
   width: 100%;
@@ -35,11 +48,20 @@
   font-size: 50px;
   margin-top: 50%;
   color: black;
+  font-family: 'Orbitron', sans-serif;
 }
 
 
 .navbar{
   background-color: black;
+  font-family: 'Orbitron', sans-serif;
+  padding-bottom: 2px;
+}
+
+
+#logo {
+  height:50px;
+  margin-left: 50%;
 }
 
 
@@ -52,16 +74,41 @@
 }
 
 #list-content {
-  height: 300px;;
+  height: 322px;;
   width: 70%;
   overflow-y: scroll;
   float: left;
-  background-color: white;
-  color: black;
+  background-color:bisque;
+  opacity: 0.9;
+  color:red;
+  border-style: solid;
+  border-width: 2px;
+  border-color: steelblue;
+  border-radius: 3px;
+}
+
+.list-text {
+  color:black;
+}
+
+.list-group-item {
+  background-color:bisque;
+  opacity: 0.9;
+  border-style: solid;
+  border-width: 2px;
+  border-color: steelblue;
+  border-radius: 3px;
+}
+
+#twitter-box {
+  height: 500px;
+  width: 100%;
+  overflow-y: scroll;
+  float: left;
 }
 
 #map-select {
- width: 100%;
+ width: 75%;
 }
 
 #save-btn {
@@ -72,6 +119,46 @@
   width: 100%;
   height: 100%;
 }
+
+#rocket-card {
+border-style: solid;
+border-width: 3px;
+border-color: steelblue;
+}
+
+.card-body{ 
+  color: black;
+  background-color: bisque;
+  height: 100%;
+  border-left-style: solid;
+  border-width: 2px;
+  border-color: steelblue;
+}
+
+#main-card{
+  width: 100%;
+}
+
+#load-more-btn{
+  float: right;
+}
+svg{
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  overflow: visible
+  /* vertical-align: bottom; */
+}
+
+/* font-family: 'Orbitron', sans-serif;
+font-family: 'VT323', monospace;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Source Code Pro', monospace;
+font-family: 'Play', sans-serif; */
+
+
 /* #launch-btn:hover{
   width: 120%;
   height: 120px;

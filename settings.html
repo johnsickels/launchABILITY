@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Play|Roboto+Mono|Source+Code+Pro|VT323" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body id="settings-body">
@@ -23,34 +24,22 @@
                 <a class="nav-link" href="dashboard.html" id="dashboard-btn">Dashboard</a>
               </li>
             </ul>
+            <img src="./assets/images/logo-2.png" id="logo">
         </nav>
-      <h1>Settings</h1>
         <div class="container">
                 <div class="row">
                   <div class="col-sm-6">
                     <h1> Select Launch Pads</h1>
-                    <img src="https://www.worldpress.org/images/maps/world_600w.gif" alt="World map" id="map-select" >
+                    <img src="./assets/images/earth.gif" alt="World map" id="map-select" >
                   </div>
                   <div class="col-sm-6">
                       <h1>Select Your Rockets</h1>
                       <div id="list-example" class="list-group">
-                            <a class="list-group-item list-group-item-action" href="#list-item-1" id="pad-select-1">Cape Canaveral, FL</a>
-                            <a class="list-group-item list-group-item-action" href="#list-item-2" id="pad-select-2">Vandenberg, CA</a>
-                            <a class="list-group-item list-group-item-action" href="#list-item-3" id="pad-select-3">Wallops Island, VA</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-1" id="pad-select-1"><p class="list-text">Cape Canaveral, FL</p></a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-2" id="pad-select-2"><p class="list-text">Onenui Station, Mahia Peninsula, New Zealand</p></a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-3" id="pad-select-3"><p class="list-text">Wallops Island, VA</p></a>
                           </div>
                           <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example" id="list-content">
-                            <h3 id="list-item-1">Cape Canaveral</h4>
-                            <p>Falcon Heavy</p>
-                            <p>Falcon 9</p>
-                            <p>Atlas 5</p>
-                            <h3 id="list-item-2">Vandenberg</h4>
-                            <p>Falcon Heavy</p>
-                            <p>Falcon 9</p>
-                            <p>Atlas 5</p>
-                            <h3 id="list-item-3">Wallops Island</h4>
-                            <p>Falcon Heavy</p>
-                            <p>Falcon 9</p>
-                            <p>Atlas 5</p>
                           </div>
                           <button type="button"  id="save-btn">Save Rockets</button>     
                   </div>
