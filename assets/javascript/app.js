@@ -36,9 +36,177 @@ var dataRef = firebase.database();
 //     // ...
 //   });  
 
+
+
+var s = Snap("#map");
+
+var loadPromises = [
+  // loadSVG("/assets/images/falconheavy.svg"),
+  // loadSVG("/assets/images/fire.svg")
+  loadSVG("/assets/images/map.svg")
+];
+
+
+Promise.all(loadPromises).then(function(results) {
+  // results contains the loaded SVGs, in order.
+  for (var i = 0; i < results.length; ++i) {
+    var svg = results[i];
+    s.append(svg);
+  }
+
+
+var vandenburgclickCallback = function(event) {
+  // alert("CALIFORNIA");
+  
+  
+  $.ajax({
+    type: 'GET',
+    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=166"
+
+  }).then(function (response) {
+    console.log(response);
+    var rocketDiv = $("<div>");
+    response.launches.forEach(function (launch) {
+
+      $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
+    });
+    // $("#list-content").prepend("<h2>").text
+    $("#list-content").empty();
+    $("#list-content").prepend(rocketDiv);
+    $("#list-content").prepend($("<h3>").text("Onenui Station, Mahia Peninsula, New Zealand"));
+  });
+
+
+
+};
+
+var wallopsclickCallback = function(event) {
+  // alert("CALIFORNIA");
+  
+  
+  $.ajax({
+    type: 'GET',
+    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=109"
+
+  }).then(function (response) {
+    console.log(response);
+    var rocketDiv = $("<div>");
+    response.launches.forEach(function (launch) {
+
+      $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
+    });
+    $("#list-content").empty();
+    $("#list-content").prepend(rocketDiv);
+    $("#list-content").prepend($("<h3>").text("Wallops Island, VA"));
+
+  });
+
+
+};
+
+
+
+var canaveralclickCallback = function(event) {
+  // alert("CALIFORNIA");
+  
+  
+  $.ajax({
+    type: 'GET',
+    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=87"
+
+  }).then(function (response) {
+    console.log(response);
+    var rocketDiv = $("<div>");
+    response.launches.forEach(function (launch) {
+
+      $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
+
+    });
+    $("#list-content").empty();
+    $("#list-content").prepend(rocketDiv);
+    $("#list-content").prepend($("<h3>").text("Cape Canaveral, FL"));
+  });
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+s.select("#canaveral").mouseover(function(){
+
+  this.transform("s2");
+}).mouseout(function(){
+  this.attr({ transform: 's1' });
+});
+
+s.select("#wallops").mouseover(function(){
+
+  this.transform("s2");
+}).mouseout(function(){
+  this.attr({ transform: 's1' });
+});
+
+s.select("#vandenburg").mouseover(function(){
+
+  this.transform("s2");
+}).mouseout(function(){
+  this.attr({ transform: 's1' });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+console.log(s.select("#Vandenburg"));
+s.select("#vandenburg").click(vandenburgclickCallback);
+s.select("#wallops").click(wallopsclickCallback);
+s.select("#canaveral").click(canaveralclickCallback);
+
+
+
+
+});
+
+
+
+
+
+
+
+var authenticateduser;
+
+
 // var querystring = "https://launchlibrary.net/1.4/launch?"
 // var location;
-
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    authenticateduser=user;
+    // User is signed in.
+    console.log(user);
+  } else {
+    // No user is signed in.
+  }
+});
+// var user = firebase.auth().currentUser;
+// // alert(user.displayName);
+// console.log(sessionStorage.getItem("user"));
 $("#pad-select-1").on("click", function () {
   // location="&next=5&locationid=87";
   // querystring+=location;
@@ -74,7 +242,7 @@ $("#pad-select-2").on("click", function () {
     var rocketDiv = $("<div>");
     response.launches.forEach(function (launch) {
 
-      $(rocketDiv).append($("<p>").html('<input type="checkbox" name=" ' + launch.id + '">' + launch.name + '</input>'));
+      $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
     });
     // $("#list-content").prepend("<h2>").text
     $("#list-content").prepend(rocketDiv);
@@ -95,7 +263,7 @@ $("#pad-select-3").on("click", function () {
     var rocketDiv = $("<div>");
     response.launches.forEach(function (launch) {
 
-      $(rocketDiv).append($("<p>").html('<input type="checkbox" name=" ' + launch.id + '">' + launch.name + '</input>'));
+      $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
     });
     $("#list-content").prepend(rocketDiv);
     $("#list-content").prepend($("<h3>").text("Wallops Island, VA"));
@@ -111,28 +279,61 @@ $("#save-btn").on("click", (event) => {
   $('input:checkbox:checked').each(function (index) {
     console.log("------------------");
 
-    console.log($(this)[0].name)
+    // console.log($(this)[0].name)
     rocketIDs.push($(this).val());
+    console.log(removeDuplicates(rocketIDs));
   });
-  for (i = 0; i < rocketIDs.length; i++) {
-    dataRef.ref().push({
+  var fixedarray=[];
+  // fixedarray=getPreviousSaves(rocketIDs);
+  // for (i = 0; i < rocketIDs.length; i++) {
+    dataRef.ref('/users/'+authenticateduser.uid).set({
+      userid: authenticateduser.uid,
       rocketID: rocketIDs
-    });
-  };
+    }
+    );
+  // };
 });
 
-// $.ajax({
-// url:"https://api.twitter.com/oauth2/token?grant_type=client_credentials",
-// type:"POST",
-// grant_type:'client_credentials'
-// }).then(function(response){
-// console.log("Twitter Token Response "+response);
-// });
 
 
 
+function loadSVG(url) {
+  return new Promise(function(resolve, reject) {
+    Snap.load(url, resolve);
+  });
+};
 
 
+function getPreviousSaves(rockedIDarray){
+  
+  dataRef.ref('/users/' + authenticateduser.uid).once('value').then(function(snapshot) {
+    console.log("Getting User Data");
+    console.log("SNAPSHOT: "+snapshot.val());
+    // var savedrockets= snapshot.val().rocketID;
+    var updatedArray;
+    if(snapshot.val().rocketID!=undefined){
+    updatedArray=snapshot.val().rocketID
+    }
+   else{
+     updatedArray=[];
+   }
+    console.log(updatedArray);
+    updatedArray.concat(rockedIDarray);
+    console.log(updatedArray);
+    return removeDuplicates(updatedArray);
 
-// //Add Auth
-//   });
+
+  });
+
+}
+
+function removeDuplicates(array){
+  var finishedarray=[];
+  array=array.sort();
+ for(var i =1 ; i<array.length;i++){
+   if(array[i]!=array[i-1]){
+     finishedarray.push(array[i]);
+   }
+ }
+ return finishedarray;
+}
