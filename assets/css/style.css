@@ -8,13 +8,13 @@
 
 #dashboard-body {
   background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
-  color: whitesmoke;
+  color:steelblue;
   font-family: 'Play', sans-serif;
-
+  text-align: center;
 }
 
 #settings-body {
-  background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BloSxjK/beginning-with-a-spinning-earth-in-space-then-zooming-out-to-reveal-the-moon-the-sun-and-then-the-entire-spinning-milky-way-galaxy_e1_at4ayg__F0000.png");
+background-color: black;
   color: whitesmoke;
   position: relative;
   font-family: 'Play', sans-serif;
@@ -161,6 +161,8 @@ border-color: steelblue;
   margin-left: 5%;
 }
 
+
+
 #main-card{
   width: 100%;
 }
@@ -168,6 +170,74 @@ border-color: steelblue;
 #load-more-btn{
   float: right;
 }
+
+#launch-name {
+  text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
+}
+
+#twitter-head {
+  text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
+}
+
+
+/* Video background settings----------> */
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+
+/* height and width might need to be auto */
+.fullscreen-bg__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%; 
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.fullscreen-bg__video-login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto; 
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+  #login-back {
+      background-image: url("https://www.universetoday.com/wp-content/uploads/2009/09/SED_wall_1920x1200.jpg");
+  }
+  #settings-back {
+      background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BloSxjK/beginning-with-a-spinning-earth-in-space-then-zooming-out-to-reveal-the-moon-the-sun-and-then-the-entire-spinning-milky-way-galaxy_e1_at4ayg__F0000.png");
+  }
+  #dashboard-back {
+      background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
+  }
+  .fullscreen-bg__video {
+      display: none;
+  }
+}
+/* --------End background settings----------------> */
+
+
 
 /* font-family: 'Orbitron', sans-serif;
 font-family: 'VT323', monospace;
