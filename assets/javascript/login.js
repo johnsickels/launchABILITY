@@ -42,7 +42,7 @@ var s = Snap(350,600 );
     var loadPromises = [
       // loadSVG("/assets/images/falconheavy.svg"),
       // loadSVG("/assets/images/fire.svg")
-      loadSVG("/ProjectOne/assets/images/combined3.svg")
+      loadSVG("/assets/images/combined3.svg")
     ];
 
     Promise.all(loadPromises).then(function(results) {
@@ -104,34 +104,34 @@ function fire2flicker(){
   var myMatrix = new Snap.Matrix();
   myMatrix.scale(4,2); 
 
-fire.animate({transform: 't100,-1500'},150, mina.linear,function(){
+// fire.animate({transform: 't100,-1500'},150, mina.linear,function(){
 
 
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
-    sessionStorage.setItem("user", user);
-    console.log(user.displayName);
-    // ...
-  }).catch(function(error) {
-    // Handle Errors here.
-    console.log("error");
-    console.log(error.message);
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
-  });  
+//   firebase.auth().signInWithPopup(provider).then(function(result) {
+//     // This gives you a Google Access Token. You can use it to access the Google API.
+//     var token = result.credential.accessToken;
+//     // The signed-in user info.
+//     var user = result.user;
+//     sessionStorage.setItem("user", user);
+//     console.log(user.displayName);
+//     // ...
+//   }).catch(function(error) {
+//     // Handle Errors here.
+//     console.log("error");
+//     console.log(error.message);
+//     var errorCode = error.code;
+//     var errorMessage = error.message;
+//     // The email of the user's account used.
+//     var email = error.email;
+//     // The firebase.auth.AuthCredential type that was used.
+//     var credential = error.credential;
+//     // ...
+//   });  
 
 
 
 
-});
+// });
 }
 
 // fire2flicker();
@@ -143,7 +143,7 @@ fire.animate({transform: 't100,-1500'},150, mina.linear,function(){
 
   //  fire.animate({opacity: 50}, 500, mina.linear);
     
-    s.animate({transform:'t0,-1500 r0 s0.9'},8000, mina.linear, function(){
+    s.animate({transform:'t0,-1500 r0 s0.9'},3000, mina.linear, function(){
 
       firebase.auth().signInWithPopup(provider).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
@@ -152,7 +152,7 @@ fire.animate({transform: 't100,-1500'},150, mina.linear,function(){
         var user = result.user;
         sessionStorage.setItem("user", user);
         console.log(user.displayName);
-        window.location.href = "/ProjectOne/settings.html";
+        window.location.replace("./settings.html");
         // ...
       }).catch(function(error) {
         // Handle Errors here.
