@@ -15,7 +15,7 @@ UCF Coding Bootcamp Project One 2019
 
 ## Solid Project Foundation
 
-### Title: Rocket Watch
+### Title: launchABILITY
 
 ### Description: 
 A web-based app that allows the user to view and keep track of local rocket launches. Three pages make up the project and are appropriately named Login, Settings, and Dashboard.
