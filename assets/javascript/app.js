@@ -47,7 +47,7 @@ var loadPromises = [
 ];
 
 
-Promise.all(loadPromises).then(function(results) {
+Promise.all(loadPromises).then(function (results) {
   // results contains the loaded SVGs, in order.
   for (var i = 0; i < results.length; ++i) {
     var svg = results[i];
@@ -55,80 +55,116 @@ Promise.all(loadPromises).then(function(results) {
   }
 
 
-var vandenburgclickCallback = function(event) {
-  // alert("CALIFORNIA");
-  
-  
-  $.ajax({
-    type: 'GET',
-    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=166"
+  var vandenburgclickCallback = function (event) {
+    // alert("CALIFORNIA");
 
-  }).then(function (response) {
-    console.log(response);
-    var rocketDiv = $("<div>");
-    response.launches.forEach(function (launch) {
 
-      $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
+    $.ajax({
+      type: 'GET',
+      url: "https://launchlibrary.net/1.4/launch?next=5&locationid=100"
+
+    }).then(function (response) {
+      console.log(response);
+      var rocketDiv = $("<div>");
+      response.launches.forEach(function (launch) {
+
+        $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
+      });
+      // $("#list-content").prepend("<h2>").text
+      $("#list-content").empty();
+      $("#list-content").prepend(rocketDiv);
+      $("#list-content").prepend($("<h3>").text("Vandenberg AFB, CA"));
     });
-    // $("#list-content").prepend("<h2>").text
-    $("#list-content").empty();
-    $("#list-content").prepend(rocketDiv);
-    $("#list-content").prepend($("<h3>").text("Onenui Station, Mahia Peninsula, New Zealand"));
+
+
+
+  };
+
+  var wallopsclickCallback = function (event) {
+    // alert("CALIFORNIA");
+
+
+    $.ajax({
+      type: 'GET',
+      url: "https://launchlibrary.net/1.4/launch?next=5&locationid=109"
+
+    }).then(function (response) {
+      console.log(response);
+      var rocketDiv = $("<div>");
+      response.launches.forEach(function (launch) {
+
+        $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
+      });
+      $("#list-content").empty();
+      $("#list-content").prepend(rocketDiv);
+      $("#list-content").prepend($("<h3>").text("Wallops Island, VA"));
+
+    });
+
+
+  };
+
+
+
+  var canaveralclickCallback = function (event) {
+    // alert("CALIFORNIA");
+
+
+    $.ajax({
+      type: 'GET',
+      url: "https://launchlibrary.net/1.4/launch?next=5&locationid=87"
+
+    }).then(function (response) {
+      console.log(response);
+      var rocketDiv = $("<div>");
+      response.launches.forEach(function (launch) {
+
+        $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
+
+      });
+      $("#list-content").empty();
+      $("#list-content").prepend(rocketDiv);
+      $("#list-content").prepend($("<h3>").text("Cape Canaveral, FL"));
+    });
+
+
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+  s.select("#canaveral").mouseover(function () {
+
+    this.transform("s2");
+  }).mouseout(function () {
+    this.attr({ transform: 's1' });
+  });
+
+  s.select("#wallops").mouseover(function () {
+
+    this.transform("s2");
+  }).mouseout(function () {
+    this.attr({ transform: 's1' });
+  });
+
+  s.select("#vandenburg").mouseover(function () {
+
+    this.transform("s2");
+  }).mouseout(function () {
+    this.attr({ transform: 's1' });
   });
 
 
 
-};
-
-var wallopsclickCallback = function(event) {
-  // alert("CALIFORNIA");
-  
-  
-  $.ajax({
-    type: 'GET',
-    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=109"
-
-  }).then(function (response) {
-    console.log(response);
-    var rocketDiv = $("<div>");
-    response.launches.forEach(function (launch) {
-
-      $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
-    });
-    $("#list-content").empty();
-    $("#list-content").prepend(rocketDiv);
-    $("#list-content").prepend($("<h3>").text("Wallops Island, VA"));
-
-  });
-
-
-};
-
-
-
-var canaveralclickCallback = function(event) {
-  // alert("CALIFORNIA");
-  
-  
-  $.ajax({
-    type: 'GET',
-    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=87"
-
-  }).then(function (response) {
-    console.log(response);
-    var rocketDiv = $("<div>");
-    response.launches.forEach(function (launch) {
-
-      $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
-
-    });
-    $("#list-content").empty();
-    $("#list-content").prepend(rocketDiv);
-    $("#list-content").prepend($("<h3>").text("Cape Canaveral, FL"));
-  });
-
-
-};
 
 
 
@@ -138,46 +174,10 @@ var canaveralclickCallback = function(event) {
 
 
 
-
-
-
-
-s.select("#canaveral").mouseover(function(){
-
-  this.transform("s2");
-}).mouseout(function(){
-  this.attr({ transform: 's1' });
-});
-
-s.select("#wallops").mouseover(function(){
-
-  this.transform("s2");
-}).mouseout(function(){
-  this.attr({ transform: 's1' });
-});
-
-s.select("#vandenburg").mouseover(function(){
-
-  this.transform("s2");
-}).mouseout(function(){
-  this.attr({ transform: 's1' });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-console.log(s.select("#Vandenburg"));
-s.select("#vandenburg").click(vandenburgclickCallback);
-s.select("#wallops").click(wallopsclickCallback);
-s.select("#canaveral").click(canaveralclickCallback);
+  console.log(s.select("#Vandenburg"));
+  s.select("#vandenburg").click(vandenburgclickCallback);
+  s.select("#wallops").click(wallopsclickCallback);
+  s.select("#canaveral").click(canaveralclickCallback);
 
 
 
@@ -195,9 +195,9 @@ var authenticateduser;
 
 // var querystring = "https://launchlibrary.net/1.4/launch?"
 // var location;
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    authenticateduser=user;
+    authenticateduser = user;
     // User is signed in.
     console.log(user);
   } else {
@@ -275,22 +275,22 @@ $("#pad-select-3").on("click", function () {
 
 $("#save-btn").on("click", (event) => {
   console.log($(this));
-var rocketIDs = [];
+  var rocketIDs = [];
   $('input:checkbox:checked').each(function (index) {
     console.log("------------------");
-    
+
     // console.log($(this)[0].name)
     rocketIDs.push($(this).val());
     console.log(removeDuplicates(rocketIDs));
   });
-  var fixedarray=[];
-  fixedarray=getPreviousSaves(rocketIDs);
+  var fixedarray = [];
+  fixedarray = getPreviousSaves(rocketIDs);
   // for (i = 0; i < rocketIDs.length; i++) {
-    dataRef.ref('/users/'+authenticateduser.uid).set({
-      userid: authenticateduser.uid,
-      rocketID: rocketIDs
-    }
-    );
+  dataRef.ref('/users/' + authenticateduser.uid).set({
+    userid: authenticateduser.uid,
+    rocketID: rocketIDs
+  }
+  );
   // };
 });
 
@@ -298,25 +298,25 @@ var rocketIDs = [];
 
 
 function loadSVG(url) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     Snap.load(url, resolve);
   });
 };
 
 
-function getPreviousSaves(rockedIDarray){
-  
-  dataRef.ref('/users/' + authenticateduser.uid).once('value').then(function(snapshot) {
+function getPreviousSaves(rockedIDarray) {
+
+  dataRef.ref('/users/' + authenticateduser.uid).once('value').then(function (snapshot) {
     console.log("Getting User Data");
-    console.log("SNAPSHOT: "+snapshot.val());
+    console.log("SNAPSHOT: " + snapshot.val());
     // var savedrockets= snapshot.val().rocketID;
     var updatedArray;
-    if(snapshot.val().rocketID!=null){
-    updatedArray=snapshot.val().rocketID
+    if (snapshot.val().rocketID != null) {
+      updatedArray = snapshot.val().rocketID
     }
-   else{
-     updatedArray=[];
-   }
+    else {
+      updatedArray = [];
+    }
     console.log(updatedArray);
     updatedArray.concat(rockedIDarray);
     console.log(updatedArray);
@@ -327,17 +327,17 @@ function getPreviousSaves(rockedIDarray){
 
 }
 
-function removeDuplicates(array){
-  var finishedarray=[];
-  array=array.sort();
+function removeDuplicates(array) {
+  var finishedarray = [];
+  array = array.sort();
   // if(array.length>2){
- for(var i =0 ; i<array.length;i++){
-   if(array[i]!=array[i+1]){
-     finishedarray.push(array[i]);
-   }
- }
- return finishedarray;
-//  else{
-//    return array;
-//  }
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] != array[i + 1]) {
+      finishedarray.push(array[i]);
+    }
+  }
+  return finishedarray;
+  //  else{
+  //    return array;
+  //  }
 }
