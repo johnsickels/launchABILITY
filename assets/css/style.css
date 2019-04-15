@@ -2,8 +2,9 @@
   
 
 #login-body {
-    background-image: url("https://www.universetoday.com/wp-content/uploads/2009/09/SED_wall_1920x1200.jpg");
+    /* background-image: url("https://www.universetoday.com/wp-content/uploads/2009/09/SED_wall_1920x1200.jpg"); */
     color: whitesmoke;
+    background-color: black;
 }
 
 #dashboard-body {
@@ -15,9 +16,11 @@
 
 #settings-body {
 background-color: black;
+  /* background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BloSxjK/beginning-with-a-spinning-earth-in-space-then-zooming-out-to-reveal-the-moon-the-sun-and-then-the-entire-spinning-milky-way-galaxy_e1_at4ayg__F0000.png"); */
   color: whitesmoke;
   position: relative;
   font-family: 'Play', sans-serif;
+  background-color: black;
 }
 
 #home-body {
@@ -147,7 +150,24 @@ border-width: 3px;
 border-color: steelblue;
 }
 
-.card-body{ 
+.card-deck{
+  margin: 0 auto;
+}
+
+.card{
+  color: black;
+  max-height: 500px;
+  max-width: 300px;
+}
+
+.card-img-top{
+  height: 50%;
+  object-fit: cover;
+
+}
+
+
+/* .card-body{ 
   color: black;
   background-color: bisque;
   height: 100%;
@@ -165,7 +185,7 @@ border-color: steelblue;
 
 #main-card{
   width: 100%;
-}
+} */
 
 #load-more-btn{
   float: right;
@@ -238,6 +258,10 @@ border-color: steelblue;
 /* --------End background settings----------------> */
 
 
+
+svg{
+  margin: 0 auto;
+}
 
 /* font-family: 'Orbitron', sans-serif;
 font-family: 'VT323', monospace;

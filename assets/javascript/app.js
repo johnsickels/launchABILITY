@@ -43,7 +43,7 @@ var s = Snap("#map");
 var loadPromises = [
   // loadSVG("/assets/images/falconheavy.svg"),
   // loadSVG("/assets/images/fire.svg")
-  loadSVG("/assets/images/map.svg")
+  loadSVG("./assets/images/map.svg")
 ];
 
 
@@ -271,20 +271,20 @@ $("#pad-select-3").on("click", function () {
   });
 });
 
-var rocketIDs = [];
+
 
 $("#save-btn").on("click", (event) => {
   console.log($(this));
-
+var rocketIDs = [];
   $('input:checkbox:checked').each(function (index) {
     console.log("------------------");
-
+    
     // console.log($(this)[0].name)
     rocketIDs.push($(this).val());
     console.log(removeDuplicates(rocketIDs));
   });
   var fixedarray=[];
-  // fixedarray=getPreviousSaves(rocketIDs);
+  fixedarray=getPreviousSaves(rocketIDs);
   // for (i = 0; i < rocketIDs.length; i++) {
     dataRef.ref('/users/'+authenticateduser.uid).set({
       userid: authenticateduser.uid,
@@ -311,7 +311,7 @@ function getPreviousSaves(rockedIDarray){
     console.log("SNAPSHOT: "+snapshot.val());
     // var savedrockets= snapshot.val().rocketID;
     var updatedArray;
-    if(snapshot.val().rocketID!=undefined){
+    if(snapshot.val().rocketID!=null){
     updatedArray=snapshot.val().rocketID
     }
    else{
@@ -330,10 +330,14 @@ function getPreviousSaves(rockedIDarray){
 function removeDuplicates(array){
   var finishedarray=[];
   array=array.sort();
- for(var i =1 ; i<array.length;i++){
-   if(array[i]!=array[i-1]){
+  // if(array.length>2){
+ for(var i =0 ; i<array.length;i++){
+   if(array[i]!=array[i+1]){
      finishedarray.push(array[i]);
    }
  }
  return finishedarray;
+//  else{
+//    return array;
+//  }
 }
