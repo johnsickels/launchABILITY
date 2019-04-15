@@ -2,21 +2,19 @@
   
 
 #login-body {
-    /* background-image: url("https://www.universetoday.com/wp-content/uploads/2009/09/SED_wall_1920x1200.jpg"); */
     color: whitesmoke;
     background-color: black;
 }
 
 #dashboard-body {
-  background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
-  color:steelblue;
+  background-color: black;
+  color:whitesmoke;
   font-family: 'Play', sans-serif;
   text-align: center;
 }
 
 #settings-body {
 background-color: black;
-  /* background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BloSxjK/beginning-with-a-spinning-earth-in-space-then-zooming-out-to-reveal-the-moon-the-sun-and-then-the-entire-spinning-milky-way-galaxy_e1_at4ayg__F0000.png"); */
   color: whitesmoke;
   position: relative;
   font-family: 'Play', sans-serif;
@@ -24,7 +22,7 @@ background-color: black;
 }
 
 #home-body {
-  background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
+  background-color: black;
   color: whitesmoke;
   font-family: 'Play', sans-serif;
   text-align: center;
@@ -199,6 +197,13 @@ border-color: steelblue;
   text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
 }
 
+#selected-name {
+  text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
+}
+
+#pad-select-header {
+  text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
+}
 
 /* Video background settings----------> */
 .fullscreen-bg {
@@ -249,6 +254,9 @@ border-color: steelblue;
       background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BloSxjK/beginning-with-a-spinning-earth-in-space-then-zooming-out-to-reveal-the-moon-the-sun-and-then-the-entire-spinning-milky-way-galaxy_e1_at4ayg__F0000.png");
   }
   #dashboard-back {
+      background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
+  }
+  #home-back {
       background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
   }
   .fullscreen-bg__video {
