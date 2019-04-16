@@ -2,20 +2,18 @@
   
 
 #login-body {
-    /* background-image: url("https://www.universetoday.com/wp-content/uploads/2009/09/SED_wall_1920x1200.jpg"); */
     color: whitesmoke;
     background-color: black;
 }
 
 #dashboard-body {
-  background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
+  background-color: black;
   color: whitesmoke;
   font-family: 'Play', sans-serif;
 
 }
 
 #settings-body {
-  /* background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BloSxjK/beginning-with-a-spinning-earth-in-space-then-zooming-out-to-reveal-the-moon-the-sun-and-then-the-entire-spinning-milky-way-galaxy_e1_at4ayg__F0000.png"); */
   color: whitesmoke;
   position: relative;
   font-family: 'Play', sans-serif;
@@ -23,10 +21,10 @@
 }
 
 #home-body {
-  background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
   color: whitesmoke;
   font-family: 'Play', sans-serif;
   text-align: center;
+  background-color: black;
 }
 
 #login-btn-active {
@@ -90,8 +88,8 @@
 }
 
 #list-content {
-  height: 322px;;
-  width: 70%;
+  height: 300px;
+  width: 100%;
   overflow-y: scroll;
   float: left;
   background-color:bisque;
@@ -116,6 +114,24 @@
   border-radius: 3px;
 }
 
+#launch-name {
+  text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
+}
+
+#twitter-header {
+  text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
+
+}
+
+#selected-name {
+  text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
+}
+
+#pad-select-header {
+  text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
+
+}
+
 #twitter-box {
   height: 500px;
   width: 100%;
@@ -127,9 +143,9 @@
   border-radius: 3px;
 }
 
-#click-map {
+#map {
  width: 100%;
- height: 500px;
+ height: 600px;
 
  }
 
@@ -165,7 +181,69 @@ border-color: steelblue;
 
 }
 
+#load-more-btn{
+  float: right;
+}
 
+svg{
+  margin: 0 auto;
+}
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg__video-login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.fullscreen-bg__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+  #settings-body {
+    background-image: url("https://www.universetoday.com/wp-content/uploads/2009/09/SED_wall_1920x1200.jpg ");
+  }
+  #home-body {
+    background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
+  }
+  #dashboard-body {
+    background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
+  }
+  .fullscreen-bg__video {
+      display: none;
+  }
+}
+
+/* https://www.universetoday.com/wp-content/uploads/2009/09/SED_wall_1920x1200.jpg
+https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BloSxjK/beginning-with-a-spinning-earth-in-space-then-zooming-out-to-reveal-the-moon-the-sun-and-then-the-entire-spinning-milky-way-galaxy_e1_at4ayg__F0000.png
+https://wallpapercave.com/wp/wp2376722.jpg */
 /* .card-body{ 
   color: black;
   background-color: bisque;
