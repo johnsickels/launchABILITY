@@ -52,6 +52,8 @@ Promise.all(loadPromises).then(function(results) {
   for (var i = 0; i < results.length; ++i) {
     var svg = results[i];
     s.append(svg);
+    // s.attr({viewBox:0+","+0+","+300+","+300});
+    
   }
 
 
@@ -164,14 +166,11 @@ s.select("#vandenburg").mouseover(function(){
 });
 
 
-
-
-
-
-
-
-
-
+// var bbox = s.getBBox();
+//     var viewBox = bbox.x+' '+bbox.y+' '+bbox.width+' '+ bbox.height;
+//     s.attr({
+//      viewBox: viewBox
+//   })
 
 
 console.log(s.select("#Vandenburg"));
@@ -195,10 +194,6 @@ var authenticateduser;
 
 // var querystring = "https://launchlibrary.net/1.4/launch?"
 // var location;
-<<<<<<< HEAD
-
-$("#pad-select-1").on("click", function (){
-=======
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     authenticateduser=user;
@@ -212,32 +207,13 @@ firebase.auth().onAuthStateChanged(function(user) {
 // // alert(user.displayName);
 // console.log(sessionStorage.getItem("user"));
 $("#pad-select-1").on("click", function () {
->>>>>>> 6ef6b1fcb1dabfd60a15147ee2e9b980492cb4f8
   // location="&next=5&locationid=87";
   // querystring+=location;
   // console.log(querystring);
 
-<<<<<<< HEAD
-
-$.ajax({
-  type: 'GET',
-  url: "https://launchlibrary.net/1.4/launch?next=5&locationid=87"
-  
-}).then(function(response){
-  console.log(response);
-  response.launches.forEach(function(launch){
-  });
-  $("#list-content").append($("<a>").text(launch.name).attr("href","./dashboard.html?id="+launch.id));
-  });
   $.ajax({
     type: 'GET',
     url: "https://launchlibrary.net/1.4/launch?next=5&locationid=87"
-
-=======
-  $.ajax({
-    type: 'GET',
-    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=87"
->>>>>>> 6ef6b1fcb1dabfd60a15147ee2e9b980492cb4f8
 
   }).then(function (response) {
     console.log(response);
@@ -265,15 +241,9 @@ $("#pad-select-2").on("click", function () {
     var rocketDiv = $("<div>");
     response.launches.forEach(function (launch) {
 
-<<<<<<< HEAD
-      $(rocketDiv).append($("<a>").text(launch.name).attr("href", "./dashboard.html?id=" + launch.id));
-
-    
-=======
       $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
     });
     // $("#list-content").prepend("<h2>").text
->>>>>>> 6ef6b1fcb1dabfd60a15147ee2e9b980492cb4f8
     $("#list-content").prepend(rocketDiv);
     $("#list-content").prepend($("<h3>").text("Onenui Station, Mahia Peninsula, New Zealand"));
   });
@@ -305,31 +275,30 @@ $("#pad-select-3").on("click", function () {
 
 $("#save-btn").on("click", (event) => {
   console.log($(this));
-var rocketIDs = [];
+  var rocketIDs = [];
+
+  dataRef.ref('/users/' + authenticateduser.uid).once('value').then(function(snapshot) {
+    console.log("Getting User Data");
+    console.log("SNAPSHOT: "+snapshot.val());
+    // var savedrockets= snapshot.val().rocketID;
+    var updatedArray;
+    // if(snapshot.val().rocketID!=null){
+    rocketIDs=snapshot.val().rocketID
+    // }
+  
+  });
+
+
   $('input:checkbox:checked').each(function (index) {
     console.log("------------------");
     
-<<<<<<< HEAD
-  
-  });
-  });
-  
-});
-
-// $.ajax({
-// url:"https://api.twitter.com/oauth2/token?grant_type=client_credentials",
-// type:"POST",
-// grant_type:'client_credentials'
-// }).then(function(response){
-// console.log("Twitter Token Response "+response);
-// });
-=======
     // console.log($(this)[0].name)
     rocketIDs.push($(this).val());
-    console.log(removeDuplicates(rocketIDs));
+    // console.log(removeDuplicates(rocketIDs));
   });
   var fixedarray=[];
-  fixedarray=getPreviousSaves(rocketIDs);
+  // fixedarray=getPreviousSaves(rocketIDs);
+  // rocketIDs=removeDuplicates(rocketIDs);
   // for (i = 0; i < rocketIDs.length; i++) {
     dataRef.ref('/users/'+authenticateduser.uid).set({
       userid: authenticateduser.uid,
@@ -338,7 +307,6 @@ var rocketIDs = [];
     );
   // };
 });
->>>>>>> 6ef6b1fcb1dabfd60a15147ee2e9b980492cb4f8
 
 
 
@@ -364,31 +332,22 @@ function getPreviousSaves(rockedIDarray){
      updatedArray=[];
    }
     console.log(updatedArray);
-    updatedArray.concat(rockedIDarray);
-    console.log(updatedArray);
-    return removeDuplicates(updatedArray);
-
+    // updatedArray.concat(rockedIDarray);
+    console.log("updated array: "+updatedArray);
+    return updatedArray;
 
   });
 
 }
 
-<<<<<<< HEAD
-// //Add Auth
-
-=======
 function removeDuplicates(array){
   var finishedarray=[];
   array=array.sort();
-  // if(array.length>2){
+ 
  for(var i =0 ; i<array.length;i++){
    if(array[i]!=array[i+1]){
      finishedarray.push(array[i]);
    }
  }
  return finishedarray;
-//  else{
-//    return array;
-//  }
 }
->>>>>>> 6ef6b1fcb1dabfd60a15147ee2e9b980492cb4f8
