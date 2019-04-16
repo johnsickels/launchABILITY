@@ -8,7 +8,7 @@ try {
 catch{ console.log("UsernameError") }
 console.log($.urlParam('id'));
 
-var now, timeToExpire;
+var now, launchTime, countdown;
 
 function displayClock(inputSeconds) {
     const sec_num = parseInt(inputSeconds.toString(), 10);
@@ -24,9 +24,10 @@ function displayClock(inputSeconds) {
     return hoursString + ':' + minutesString + ':' + secondsString;
 }
 
-function timer() {
+var countdown = moment(launchTime, "LLL").fromNow();
 
-    $('#countdown').html(`Expires in: ${displayClock(timeToExpire)}`)
+function timer() {
+    $('#countdown').html((countdown));
 }
 
 setInterval(timer, 1000);
@@ -38,8 +39,8 @@ $.ajax({
     console.log(response);
     console.log(response.launches[0].rocket.imageURL);
 
-    timeToExpire = moment().diff(response.launches[0].windowstart, 'seconds');
-    console.log(timeToExpire);
+    launchTime = (response.launches[0].windowstart);
+    console.log(launchTime);
 
 
 
