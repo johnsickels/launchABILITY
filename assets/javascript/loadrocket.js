@@ -8,6 +8,21 @@ try {
 catch{ console.log("UsernameError") }
 console.log($.urlParam('id'));
 
+// var now, timeToExpire;
+
+// function updateTime() {
+//     now = moment();
+//     console.log(now);
+    
+// }
+
+// function timer() {
+//     updateTime();
+//     $('#countdown').html(`Expires in: ${displayClock(timeToExpire)}`)
+// }
+
+// setInterval(timer, 1000);
+
 $.ajax({
     type: 'GET',
     url: "https://launchlibrary.net/1.4/launch?fields=location,mission,rocket,windowstart&id=" + $.urlParam('id')
@@ -15,19 +30,10 @@ $.ajax({
     console.log(response);
     console.log(response.launches[0].rocket.imageURL);
 
-    // var now, timeToExpire;
+    // timeToExpire = (response.launches[0].windowstart).diff(now, 'seconds');
+    // console.log(timeToExpire);
 
-    // function updateTime() {
-    //     now = moment();
-    //     console.log(now);
-    //     timeToExpire = (response.launches[0].windowstart).diff(now, 'seconds');
-    //     console.log(timeToExpire);
-    // }
 
-    // function timer() {
-    //     updateTime();
-    //     $('#countdown').html(`Expires in: ${displayClock(timeToExpire)}`)
-    // }
     // function displayClock(inputSeconds) {
     //     const sec_num = parseInt(inputSeconds.toString(), 10);
     //     const hours = Math.floor(sec_num / 3600);
@@ -45,10 +51,10 @@ $.ajax({
     $("#launch-name").text(response.launches[0].rocket.name);
     $("#launch-location").text(response.launches[0].location.name);
     $("#launch-start").text(response.launches[0].windowstart);
-    $("#payload").text(response.launches[0].missions[0].description);
     $("#rocket-image").attr("src", response.launches[0].rocket.imageURL);
+    $("#payload").text(response.launches[0].missions[0].description);
 
 
-    // setInterval(timer, 1000)
+
 });
 
