@@ -10,21 +10,30 @@ console.log($.urlParam('id'));
 
 var now, launchTime, countdown;
 
-function displayClock(inputSeconds) {
-    const sec_num = parseInt(inputSeconds.toString(), 10);
-    const hours = Math.floor(sec_num / 3600);
-    const minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-    const seconds = sec_num - (hours * 3600) - (minutes * 60);
-    let hoursString = '';
-    let minutesString = '';
-    let secondsString = '';
-    hoursString = (hours < 10) ? "0" + hours : hours.toString();
-    minutesString = (minutes < 10) ? "0" + minutes : minutes.toString();
-    secondsString = (seconds < 10) ? "0" + seconds : seconds.toString();
-    return hoursString + ':' + minutesString + ':' + secondsString;
-}
+// function displayClock(inputSeconds) {
+//     const sec_num = parseInt(inputSeconds.toString(), 10);
+//     const hours = Math.floor(sec_num / 3600);
+//     const minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+//     const seconds = sec_num - (hours * 3600) - (minutes * 60);
+//     let hoursString = '';
+//     let minutesString = '';
+//     let secondsString = '';
+//     hoursString = (hours < 10) ? "0" + hours : hours.toString();
+//     minutesString = (minutes < 10) ? "0" + minutes : minutes.toString();
+//     secondsString = (seconds < 10) ? "0" + seconds : seconds.toString();
+//     return hoursString + ':' + minutesString + ':' + secondsString;
+// }
 
-var countdown = moment(launchTime, "LLL").fromNow();
+now = moment().format('MMMM D, YYYY HH:mm:ss');
+console.log(now);
+nowX = moment(now).format('X');
+console.log(nowX);
+launchTimeX = moment(launchTime).format('X');
+console.log(launchTimeX);
+
+countdown = moment(now).diff(launchTime);
+console.log(countdown);
+// countdown = moment().to(launchTime, "MMMM D YYYY HH:mm").fromNow();
 
 function timer() {
     $('#countdown').html((countdown));
