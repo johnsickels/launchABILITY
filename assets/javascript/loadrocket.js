@@ -10,24 +10,35 @@ console.log($.urlParam('id'));
 
 var now, launchTime, countdown;
 
-function displayClock(inputSeconds) {
-    const sec_num = parseInt(inputSeconds.toString(), 10);
-    const hours = Math.floor(sec_num / 3600);
-    const minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-    const seconds = sec_num - (hours * 3600) - (minutes * 60);
-    let hoursString = '';
-    let minutesString = '';
-    let secondsString = '';
-    hoursString = (hours < 10) ? "0" + hours : hours.toString();
-    minutesString = (minutes < 10) ? "0" + minutes : minutes.toString();
-    secondsString = (seconds < 10) ? "0" + seconds : seconds.toString();
-    return hoursString + ':' + minutesString + ':' + secondsString;
-}
+// function displayClock(inputSeconds) {
+//     const sec_num = parseInt(inputSeconds.toString(), 10);
+//     const days = Math.floor(sec_num / 86400);
+//     const hours = Math.floor(sec_num / 3600);
+//     const minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+//     const seconds = sec_num - (hours * 3600) - (minutes * 60);
+//     let daysString = '';
+//     let hoursString = '';
+//     let minutesString = '';
+//     let secondsString = '';
+//     daysString = (days < 10) ? "0" + days : days.toString();
+//     hoursString = (hours < 10) ? + hours : hours.toString();
+//     minutesString = (minutes < 10) ? "0" + minutes : minutes.toString();
+//     secondsString = (seconds < 10) ? "0" + seconds : seconds.toString();
+//     return daysString + ':' + hoursString + ':' + minutesString + ':' + secondsString;
+// }
 
-var countdown = moment(launchTime, "LLL").fromNow();
+now = moment().format('MMMM D, YYYY HH:mm:ss');
+console.log(now);
+nowX = moment(now).format('X');
+console.log(nowX);
+
+
+
+
+// countdown = moment().to(launchTime, "MMMM D YYYY HH:mm").fromNow();
 
 function timer() {
-    $('#countdown').html((countdown));
+    $('#countdown').html(countdown);
 }
 
 setInterval(timer, 1000);
@@ -41,10 +52,14 @@ $.ajax({
 
     launchTime = (response.launches[0].windowstart);
     console.log(launchTime);
+    launchTimeX = moment(launchTime).format('X');
+    console.log(launchTimeX);
+    countdown = nowX - launchTimeX;
+    console.log(countdown);
 
 
 
-    $("#countdown").text(countdown);
+    // $("#countdown").text(countdown);
     $("#launch-name").text(response.launches[0].rocket.name);
     $("#launch-location").text(response.launches[0].location.name);
     $("#launch-start").text(response.launches[0].windowstart);
