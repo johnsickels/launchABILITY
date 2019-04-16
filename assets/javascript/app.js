@@ -63,7 +63,7 @@ var vandenburgclickCallback = function(event) {
   
   $.ajax({
     type: 'GET',
-    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=166"
+    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=100"
 
   }).then(function (response) {
     console.log(response);
@@ -75,7 +75,7 @@ var vandenburgclickCallback = function(event) {
     // $("#list-content").prepend("<h2>").text
     $("#list-content").empty();
     $("#list-content").prepend(rocketDiv);
-    $("#list-content").prepend($("<h3>").text("Onenui Station, Mahia Peninsula, New Zealand"));
+    $("#list-content").prepend($("<h3>").text("Vandenburg AFB, CA"));
   });
 
 
