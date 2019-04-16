@@ -1,5 +1,17 @@
 
-  
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background-color:rgb(32, 32, 32);
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 5px;
+    margin-top: 20px;
+  }
 
 #login-body {
     color: whitesmoke;
@@ -133,7 +145,7 @@
 }
 
 #twitter-box {
-  height: 500px;
+  height: 600px;
   width: 100%;
   overflow-y: scroll;
   float: left;
@@ -141,6 +153,7 @@
   border-width: 2px;
   border-color: steelblue;
   border-radius: 3px;
+  margin-bottom: 100px;
 }
 
 #map {
@@ -152,6 +165,9 @@
 
 #save-btn {
   margin-top: 10px;
+  margin-bottom: 50px;
+  margin-left: 35%;
+  margin-right: 30%;
 }
 
 #rocket-feed{
@@ -163,20 +179,32 @@
 border-style: solid;
 border-width: 3px;
 border-color: steelblue;
+overflow-y: scroll;
 }
 
 .card-deck{
   margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+.card-title {
+  background-color: whitesmoke;
+  margin-bottom: 0px;
+}
+
+.card-text {
+  background-color: white;
+  margin-bottom: 0px;
 }
 
 .card{
   color: black;
-  max-height: 500px;
+  max-height: 400px;
   max-width: 300px;
 }
 
 .card-img-top{
-  height: 50%;
+  height: 100%;
   object-fit: cover;
 
 }
@@ -248,26 +276,6 @@ svg{
   background-color: black;
 }
 
-/* https://www.universetoday.com/wp-content/uploads/2009/09/SED_wall_1920x1200.jpg
-https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BloSxjK/beginning-with-a-spinning-earth-in-space-then-zooming-out-to-reveal-the-moon-the-sun-and-then-the-entire-spinning-milky-way-galaxy_e1_at4ayg__F0000.png
-https://wallpapercave.com/wp/wp2376722.jpg */
-/* .card-body{ 
-  color: black;
-  background-color: bisque;
-  height: 100%;
-  border-left-style: solid;
-  border-width: 2px;
-  border-color: steelblue;
-}
-
-.card-deck {
-  margin-right: 5%;
-  margin-left: 5%;
-}
-
-#main-card{
-  width: 100%;
-} */
 
 #load-more-btn{
   float: right;
@@ -300,8 +308,7 @@ font-family: 'Source Code Pro', monospace;
 font-family: 'Play', sans-serif; */
 
 
-/* #launch-btn:hover{
-  width: 120%;
-  height: 120px;
-} */
+.card-img-top:hover{
+  opacity: 0.8;
+}
 
