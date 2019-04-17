@@ -286,7 +286,7 @@ $("#save-btn").on("click", (event) => {
     rocketIDs=snapshot.val().rocketID
     // }
 
-  alert("rocket(s) saved! (change me later)");
+  // alert("rocket(s) saved! (change me later)");
   
   });
 
