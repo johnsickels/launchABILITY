@@ -62,10 +62,16 @@
             
           <div class ="col-sm-5">
               <h2 id="twitter-header">Twitter Feed</h2>
-            <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example" id="twitter-box">
+              <button type="button" class="btn btn-primary btn-sm" onclick="spaceXTwitter()" id="twitter-buttons">SpaceX</button>
+              <button type="button" class="btn btn-primary btn-sm" onclick="nasaTwitter()" id="twitter-buttons">NASA</button>
+            <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example" id="twitter-box1">
                  <a class="twitter-timeline" href="https://twitter.com/SpaceX?ref_src=twsrc%5Etfw">Tweets by SpaceX</a> 
                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>        
             </div>
+            <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example" id="twitter-box2">
+                    <a class="twitter-timeline" href="https://twitter.com/NASA?ref_src=twsrc%5Etfw">Tweets by SpaceX</a> 
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>        
+               </div>
           </div>
         </div>
     </div>
@@ -75,9 +81,23 @@
         <p>@2019 launchABILITY</p>
     </div>
       
-      <h1 id="launch-name"></h1>
-      <p id="launch-start"></p>
-      <h1></h1>
+<script>
+
+window.onload = function() {
+  document.getElementById('twitter-box2').style.display = 'none';
+};
+
+function nasaTwitter() {
+   $("#twitter-box1").hide();
+   $("#twitter-box2").show();
+    
+}
+
+function spaceXTwitter() {
+   $("#twitter-box2").hide();
+   $("#twitter-box1").show(); 
+}
+</script>
       
       
     <!-- Optional JavaScript -->
