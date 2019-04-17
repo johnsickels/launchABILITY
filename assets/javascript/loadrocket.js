@@ -70,3 +70,15 @@ $.ajax({
 
 });
 
+
+$.getJSON(
+    'https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&rvprop=content&rvsection=0' +
+    '&origin=*' + // <-- this is the magic ingredient!
+    '&titles=Falcon Heavy'
+    ,
+     function(data){ console.log(data);
+         
+    // $("#wiki-info").text(data);
+    }
+  );
+
