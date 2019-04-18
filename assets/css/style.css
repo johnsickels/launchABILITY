@@ -121,7 +121,7 @@
   border-width: 2px;
   border-color: red;
   border-radius: 3px;
-  margin-top: 10px;
+  margin-top: 45px;
 }
 
 .list-text {
@@ -151,10 +151,17 @@
   text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
 }
 
-#pad-select-header {
+#pad-select-header1 {
   text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
   text-align: center;
+  margin-bottom: -30px;
 
+}
+
+#pad-select-header2 {
+  text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
+  text-align: center;
+  
 }
 
 #twitter-box1 {
@@ -179,6 +186,24 @@
   border-color: steelblue;
   border-radius: 3px;
   margin-bottom: 100px;
+}
+
+#wiki-header {
+  text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
+}
+
+#wiki-links {
+  float: left;
+  background-color:white;
+  margin-bottom: 0px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: steelblue;
+  border-radius: 3px;
+}
+
+.wikiTags {
+  float: left;
 }
 
 #map {
@@ -215,14 +240,52 @@ overflow-y: scroll;
   margin-right: 20%;
 }
 
+#dashCard-title {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.card-text-dash {
+  background-color: white;
+  margin-bottom: 0px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: lightgray;
+  border-radius: 3px;
+  font-size: 25px;
+  color: red;
+}
+
+#countdown {
+  color: black;
+  font-size: 20px;
+}
+
+#launch-location {
+  color: black;
+  font-size: 20px;
+}
+
+#launch-start {
+  color: black;
+  font-size: 20px;
+}
+
+#payload {
+  color: black;
+  font-size: 20px;
+}
+
 .card-title {
   background-color: skyblue;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
   text-align: center;
   padding-bottom: 10px;
   border-style: solid;
   border-width: 2px;
   border-color: steelblue;
+  max-height: 100px;
+  font-size: 20px;
 }
 
 .card-text {
@@ -232,6 +295,7 @@ overflow-y: scroll;
   border-width: 2px;
   border-color: lightgray;
   border-radius: 3px;
+  font-size: 15px;
 }
 
 
@@ -329,13 +393,19 @@ svg{
 
 @media (max-width: 767px) {
   #settings-body {
-    background-image: url("https://www.universetoday.com/wp-content/uploads/2009/09/SED_wall_1920x1200.jpg ");
+    background-image: url("https://i.ytimg.com/vi/MxyO8JqVI-0/maxresdefault.jpg");
+    background-repeat:   no-repeat;
+    background-position: center center;
   }
   #home-body {
     background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
+    background-repeat:   no-repeat;
+    background-position: center center;
   }
   #dashboard-body {
     background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
+    background-repeat:   no-repeat;
+    background-position: center center;
   }
   .fullscreen-bg__video {
       display: none;
