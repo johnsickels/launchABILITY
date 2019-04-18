@@ -48,6 +48,10 @@ $.ajax({
     $("#launch-location").text(response.launches[0].location.name);
     $("#launch-start").text(response.launches[0].windowstart);
     $("#rocket-image").attr("src", response.launches[0].rocket.imageURL);
-    $("#payload").text(response.launches[0].missions[0].description);
+    if (response.launches[0].missions.length == 0) {
+        $("#payload").text("TOP SECRET");
+    } else {    
+        $("#payload").text(response.launches[0].missions[0].description);
+    }
 
 });

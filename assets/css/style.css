@@ -358,3 +358,10 @@ font-family: 'Play', sans-serif; */
   cursor: pointer;
 }
 
+#remove{
+  width:20px;
+  position: absolute;
+  top:-8px;
+  right:-8px;
+  z-index:2;
+}
