@@ -33,6 +33,14 @@
   background-color: black;
 }
 
+#exampleModal {
+  color: black;
+}
+
+#modal-btn {
+  color: white;
+}
+
 
 #home-body {
   color: whitesmoke;
@@ -150,7 +158,7 @@
 }
 
 #twitter-box1 {
-  height: 600px;
+  height: 550px;
   width: 100%;
   overflow-y: scroll;
   float: left;
@@ -162,7 +170,7 @@
 }
 
 #twitter-box2 {
-  height: 600px;
+  height: 550px;
   width: 100%;
   overflow-y: scroll;
   float: left;
@@ -199,9 +207,6 @@ border-color: steelblue;
 overflow-y: scroll;
 }
 
-/* #rocket-image {
-  height: auto;
-} */
 
 .card-deck{
   margin: 0 auto;
@@ -336,11 +341,6 @@ svg{
       display: none;
   }
 }
-/* font-family: 'Orbitron', sans-serif;
-font-family: 'VT323', monospace;
-font-family: 'Roboto Mono', monospace;
-font-family: 'Source Code Pro', monospace;
-font-family: 'Play', sans-serif; */
 
 
 .card-img-top:hover{
@@ -360,3 +360,10 @@ svg{
   width: 300;
 }
 
+#remove{
+  width:20px;
+  position: absolute;
+  top:-8px;
+  right:-8px;
+  z-index:2;
+}
