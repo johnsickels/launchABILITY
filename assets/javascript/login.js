@@ -20,7 +20,7 @@ var s = Snap(350,600);
     var rocketloaded,fireloaded;
     var authenticateduser;
     var loadPromises = [
-      loadSVG("/assets/images/combined3.svg")
+      loadSVG("./assets/images/combined3.svg")
     ];
 
     firebase.auth().onAuthStateChanged(function(user) {
