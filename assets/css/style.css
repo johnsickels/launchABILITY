@@ -33,6 +33,14 @@
   background-color: black;
 }
 
+#exampleModal {
+  color: black;
+}
+
+#modal-btn {
+  color: black;
+}
+
 
 #home-body {
   color: whitesmoke;
@@ -131,6 +139,7 @@
 
 #launch-name {
   text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
+  margin-bottom: 30px;
 }
 
 #twitter-header {
@@ -148,13 +157,25 @@
 
 }
 
-#twitter-box {
+#twitter-box1 {
   height: 600px;
   width: 100%;
   overflow-y: scroll;
   float: left;
   border-style: solid;
-  border-width: 2px;
+  border-width: 3px;
+  border-color: steelblue;
+  border-radius: 3px;
+  margin-bottom: 100px;
+}
+
+#twitter-box2 {
+  height: 600px;
+  width: 100%;
+  overflow-y: scroll;
+  float: left;
+  border-style: solid;
+  border-width: 3px;
   border-color: steelblue;
   border-radius: 3px;
   margin-bottom: 100px;
@@ -185,6 +206,10 @@ border-width: 3px;
 border-color: steelblue;
 overflow-y: scroll;
 }
+
+/* #rocket-image {
+  height: auto;
+} */
 
 .card-deck{
   margin: 0 auto;
