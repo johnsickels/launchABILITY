@@ -54,4 +54,65 @@ $.ajax({
         $("#payload").text(response.launches[0].missions[0].description);
     }
 
+
+    var rocketname=response.launches[0].rocket.name;
+    var wikipage;
+    if(rocketname.includes('Falcon Heavy')){
+    wikipage="Falcon Heavy";
+    }
+    if(rocketname.includes('Falcon 9')){
+        wikipage="Falcon 9";
+    }
+    if(rocketname.includes('Antares')){
+        wikipage="Antares (rocket)";
+    }
+    
+    $.ajax({
+        type: "GET",
+        origin:'*',
+        headers: {
+            "User-Agent": "someone"
+          },
+        url:"https://en.wikipedia.org/w/api.php?action=opensearch&search='+wikipage+'&limit=1&format=json"
+    }).then(function(response){
+console.log(response);
+    })
+    
+    
+    // $.getJSON(
+    //     'https://en.wikipedia.org/w/api.php?action=opensearch&search='+wikipage+'&limit=1&format=jsonp&origin=localhost'
+    //     ,
+    //      function(data){ console.log(data);
+    //         var articledescription=data.query.pages;
+    //         console.log(Object.values(articledescription));
+    //         console.log(Object.values(articledescription)[0].revisions[0]);
+    //     // $("#wiki-info").text(data);
+    //     }
+    //   );
+
+      $.getJSON('https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&&inprop=url&gsrsearch='+wikipage+'&limit=1&callback=?', function(data) {
+    console.log(data);
+   
+    for(x in data.query.pages){
+        console.log(x.title);
+        
+    }
+
+    console.log(Object.values(data.query.pages).forEach(function(element){
+        console.log(element.title);
+        var wiki=$("#wiki-links");
+       var link= $("<a>").text(element.title);
+        link.attr("href", "https://en.wikipedia.org/wiki/"+element.title)
+       wiki.append(link);
+    }))
+    
 });
+
+
+});
+
+
+
+
+
+

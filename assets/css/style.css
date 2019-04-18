@@ -270,18 +270,16 @@ svg{
   float: right;
 }
 
-svg{
+#map svg{
   margin: 0 auto;
-  /* max-height: 100px;
-  max-width: 100px; */
-  /* display: block;
-  position: absolute; */
+
   width: 100%;
   height: 100%;
+
 }
 
 #map{
-  border: 2px solid steelblue;
+ 
   margin: 0 auto;
   text-align: center;
   height: 500px;
@@ -348,6 +346,18 @@ svg{
 .card-img-top:hover{
   opacity: 0.8;
   cursor: pointer;
+}
+#launch{
+  height: 80%;
+  width: auto;
+  z-index: -1;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+}
+svg{
+  height: 300;
+  width: 300;
 }
 
 #remove{
