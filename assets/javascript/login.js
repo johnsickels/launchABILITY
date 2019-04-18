@@ -13,7 +13,9 @@ console.log("app.js is working");
 
   var provider = new firebase.auth.GoogleAuthProvider();
   
-var s = Snap(350,600);
+var s = Snap(200,500);
+
+
     var fire;
     var fire2;
     var rocket;
@@ -36,6 +38,8 @@ var s = Snap(350,600);
       for (var i = 0; i < results.length; ++i) {
         var svg = results[i];
         s.append(svg);
+        s.transform("t"+$(window).width()/2+",0");
+       
       }
       
 
@@ -74,8 +78,8 @@ function fire2flicker(){
 
 
 }
-  
-    s.animate({transform:'t0,-1500'},3000, mina.linear, function(){
+// s.transform("t"+$(window).width/2+",0");
+    s.animate({transform:"t"+$(window).width()/2+",-1500"},3000, mina.linear, function(){
       
       if(authenticateduser!=null){
         window.location.replace("./settings.html");
