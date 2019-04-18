@@ -38,7 +38,7 @@
 }
 
 #modal-btn {
-  color: black;
+  color: white;
 }
 
 
@@ -207,9 +207,6 @@ border-color: steelblue;
 overflow-y: scroll;
 }
 
-/* #rocket-image {
-  height: auto;
-} */
 
 .card-deck{
   margin: 0 auto;
@@ -346,11 +343,6 @@ svg{
       display: none;
   }
 }
-/* font-family: 'Orbitron', sans-serif;
-font-family: 'VT323', monospace;
-font-family: 'Roboto Mono', monospace;
-font-family: 'Source Code Pro', monospace;
-font-family: 'Play', sans-serif; */
 
 
 .card-img-top:hover{
@@ -358,3 +350,8 @@ font-family: 'Play', sans-serif; */
   cursor: pointer;
 }
 
+/* font-family: 'Orbitron', sans-serif;
+font-family: 'VT323', monospace;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Source Code Pro', monospace;
+font-family: 'Play', sans-serif; */
