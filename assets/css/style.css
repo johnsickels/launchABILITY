@@ -350,8 +350,18 @@ svg{
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 /* font-family: 'Orbitron', sans-serif;
 font-family: 'VT323', monospace;
 font-family: 'Roboto Mono', monospace;
 font-family: 'Source Code Pro', monospace;
 font-family: 'Play', sans-serif; */
+=======
+#remove{
+  width:20px;
+  position: absolute;
+  top:-8px;
+  right:-8px;
+  z-index:2;
+}
+>>>>>>> 6ed60902ae81c4d77309f15aa365f38c8092dfe3
