@@ -272,10 +272,10 @@ $("#pad-select-3").on("click", function () {
 });
 
 
-
+ var rocketIDs = [];
 $("#save-btn").on("click", (event) => {
   console.log($(this));
-  var rocketIDs = [];
+ 
 
   dataRef.ref('/users/' + authenticateduser.uid).once('value').then(function(snapshot) {
     console.log("Getting User Data");
