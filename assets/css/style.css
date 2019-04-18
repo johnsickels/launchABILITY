@@ -358,7 +358,7 @@ font-family: 'Play', sans-serif; */
   cursor: pointer;
 }
 
-#remove{
+.remove{
   width:20px;
   position: absolute;
   top:-8px;
