@@ -114,7 +114,7 @@ var canaveralclickCallback = function(event) {
   
   $.ajax({
     type: 'GET',
-    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=87"
+    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=84&locationid=87"
 
   }).then(function (response) {
     console.log(response);
