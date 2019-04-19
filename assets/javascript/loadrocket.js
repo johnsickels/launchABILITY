@@ -44,7 +44,7 @@ $.ajax({
     launchTime = (response.launches[0].windowstart);
 
     // $("#countdown").text(countdown);
-    $("#launch-name").text(response.launches[0].rocket.name);
+    $("#dashCard-title").text(response.launches[0].rocket.name);
     $("#launch-location").text(response.launches[0].location.name);
     $("#launch-start").text(response.launches[0].windowstart);
     $("#rocket-image").attr("src", response.launches[0].rocket.imageURL);
@@ -101,8 +101,9 @@ console.log(response);
     console.log(Object.values(data.query.pages).forEach(function(element){
         console.log(element.title);
         var wiki=$("#wiki-links");
-       var link= $("<a>").text(element.title);
+       var link= $("<a>").text(element.title + " || ");
         link.attr("href", "https://en.wikipedia.org/wiki/"+element.title)
+        link.addClass("wikiTag");
        wiki.append(link);
     }))
     

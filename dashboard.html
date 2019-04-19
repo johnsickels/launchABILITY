@@ -42,7 +42,7 @@
     <div class="container-fluid">
         <div class ="row">
             <div class ="col-sm-7">
-                <h1 id="launch-name">Rocket Name</h1>
+                <h1 id="launch-name">Launch Info</h1>
               <div class="card mb-3" id="rocket-card" style="max-width: 100%;">
                    <div class="row no-gutters">
                       <div class="col-md-4">
@@ -50,18 +50,21 @@
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
-                          <h3 class="card-title">Launch Info</h3>
-                          <h5 class="card-text">Countdown: <span id="countdown"></span></h5>
+                          <h2 class="card-title" id="dashCard-title"></h3>
+                          <h5 class="card-text-dash">Countdown: <br><span id="countdown"></span></h5>
                           <br>
-                          <h5 class="card-text">Location: <span id="launch-location"></span></h5>
+                          <h5 class="card-text-dash">Location: <span id="launch-location"></span></h5>
                           <br>
-                          <h5 class="card-text">Date/Time: <span id="launch-start"></span></h5>
+                          <h5 class="card-text-dash">Date/Time: <span id="launch-start"></span></h5>
                           <br>
-                          <h5 class="card-text">Mission: <span id="payload"></span></h5>
+                          <h5 class="card-text-dash">Mission: <span id="payload"></span></h5>
                         </div>
                       </div>
                    </div>
               </div>
+              <h2 id="wiki-header">Supplemental Reading</h2>
+              <div id="wiki-links">
+                </div>
             </div>
 
 <!-- Twitter Feed -->
@@ -78,14 +81,10 @@
                     <a class="twitter-timeline" href="https://twitter.com/NASA?ref_src=twsrc%5Etfw">Tweets by SpaceX</a> 
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>        
                </div>
-          </div>
-          
-
-          </div>
-          <div id="wiki-links">
-            
-        </div>
+          </div> 
+        </div>  
     </div>
+      
 
 <!-- Footer -->
 
