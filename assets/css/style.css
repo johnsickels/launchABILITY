@@ -20,7 +20,7 @@
 
 #dashboard-body {
   background-color: black;
-  color: whitesmoke;
+  color: white;
   font-family: 'Play', sans-serif;
   text-align: center;
 
@@ -39,6 +39,23 @@
 
 #modal-btn {
   color: white;
+}
+
+.modal-header {
+  background-color: rgb(41, 41, 41);
+  color: red;
+  /* border-style: solid;
+  border-width: 2px;
+  border-bottom: 0px;
+  border-color: red; */
+}
+
+.modal-content{
+  background-color:rgb(51, 51, 51);
+  color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
 }
 
 
@@ -202,9 +219,7 @@
   border-radius: 3px;
 }
 
-.wikiTags {
-  float: left;
-}
+  
 
 #map {
  width: 100%;

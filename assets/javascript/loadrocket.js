@@ -101,7 +101,7 @@ console.log(response);
     console.log(Object.values(data.query.pages).forEach(function(element){
         console.log(element.title);
         var wiki=$("#wiki-links");
-       var link= $("<a>").text(element.title + "||");
+       var link= $("<a>").text(element.title + " || ");
         link.attr("href", "https://en.wikipedia.org/wiki/"+element.title)
         link.addClass("wikiTag");
        wiki.append(link);
