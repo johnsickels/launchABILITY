@@ -445,7 +445,7 @@ svg{
   width: 300;
 }
 
-#remove{
+.remove{
   width:20px;
   position: absolute;
   top:-8px;
