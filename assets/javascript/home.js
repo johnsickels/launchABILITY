@@ -10,10 +10,6 @@ firebase.initializeApp(config);
 
 var dataRef = firebase.database();
 
-var authenticateduser;
-
-var starCountRef;
-
 // var querystring = "https://launchlibrary.net/1.4/launch?"
 // var location;
 firebase.auth().onAuthStateChanged(function (user) {
@@ -22,7 +18,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     // User is signed in.
     console.log(user);
 
-    starCountRef = dataRef.ref('/users/' + user.uid);
+    var starCountRef = dataRef.ref('/users/' + user.uid);
     starCountRef.on('value', function (snapshot) {
       console.log(snapshot.val().rocketID);
 
@@ -80,6 +76,8 @@ firebase.auth().onAuthStateChanged(function (user) {
           newcard.append(cardbody);
           $(".card-deck").append(newcard);
 
+
+
           newcard.on("click", function () {
             console.log("clicked");
             window.location.replace("./dashboard.html?id=" + $(this).data("launchid"))
@@ -87,13 +85,23 @@ firebase.auth().onAuthStateChanged(function (user) {
         });
       });
     });
+    $(document).on("click", ".remove", function () {
+
+      
+      console.log('clicked');
+
+      keyref = $(this).attr("data-id");
+      console.log(starCountRef.child('rocketID').child(keyref));
+      starCountRef.child('rocketID').child(key[1]).remove();
+      // starCountRef.child('rocketID').child(keyref).remove();
+      debugger;
+      // window.location.reload();
+    });
   } else {
     // No user is signed in.
   }
-console.log(starCountRef);
+  console.log(starCountRef);
 });
-$(document).on("click", ".remove", function () {
-  keyref = $(this).attr("data-id");
-  starCountRef.rocketID.child(keyref).remove();
-  window.location.reload();
-});
+//
+
+// });
