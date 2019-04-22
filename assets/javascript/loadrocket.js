@@ -10,24 +10,20 @@ console.log($.urlParam('id'));
 
 var countdown, distance, launchTime;
 
-// Update the count down every 1 second
 var x = setInterval(function () {
     now = moment().format('MMMM D, YYYY HH:mm:ss');
     nowX = moment(now).format('X');
     launchTimeX = moment(launchTime).format('X');
     distance = Math.floor((launchTimeX - nowX) * 1000);
 
-    // Time calculations for days, hours, minutes and seconds
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Display the result in the element with id="demo"
     $("#countdown").html(days + "d " + hours + "h "
         + minutes + "m " + seconds + "s ");
 
-    // If the count down is finished, write some text 
     if (distance < 0) {
         clearInterval(x);
         $("#countdown").html("LAUNCHED");
@@ -43,7 +39,6 @@ $.ajax({
 
     launchTime = (response.launches[0].windowstart);
 
-    // $("#countdown").text(countdown);
     $("#dashCard-title").text(response.launches[0].rocket.name);
     $("#launch-location").text(response.launches[0].location.name);
     $("#launch-start").text(response.launches[0].windowstart);
@@ -77,18 +72,6 @@ $.ajax({
     }).then(function(response){
 console.log(response);
     })
-    
-    
-    // $.getJSON(
-    //     'https://en.wikipedia.org/w/api.php?action=opensearch&search='+wikipage+'&limit=1&format=jsonp&origin=localhost'
-    //     ,
-    //      function(data){ console.log(data);
-    //         var articledescription=data.query.pages;
-    //         console.log(Object.values(articledescription));
-    //         console.log(Object.values(articledescription)[0].revisions[0]);
-    //     // $("#wiki-info").text(data);
-    //     }
-    //   );
 
       $.getJSON('https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&&inprop=url&gsrsearch='+wikipage+'&limit=1&callback=?', function(data) {
     console.log(data);

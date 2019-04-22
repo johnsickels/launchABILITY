@@ -16,7 +16,7 @@
 
 <body id="settings-body">
 
-<!-- Navbar -->
+  <!-- Navbar -->
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-custom" id="main-nav">
     <ul class="nav nav-tabs">
@@ -30,7 +30,7 @@
     <img src="./assets/images/logo-2.png" id="logo">
   </nav>
 
-<!-- Video Background -->
+  <!-- Video Background -->
 
   <div class="fullscreen-bg">
     <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
@@ -40,64 +40,54 @@
     </video>
   </div>
 
-<!-- Modal Box -->
+  <!-- Modal Box -->
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Rockets Saved!</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-               Click Continue to your Dashboard!<br> Or click Close to keep selecting rockets.
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary"><a class="nav-link" href="home.html" id="modal-btn">Continue</a></button>
-            </div>
-          </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Rockets Saved!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Click Continue to your Dashboard!<br> Or click Close to keep selecting rockets.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary"><a class="nav-link" href="home.html"
+              id="modal-btn">Continue</a></button>
         </div>
       </div>
+    </div>
+  </div>
 
-<!-- Pad Select Map   -->
+  <!-- Pad Select Map   -->
 
   <div class="container">
     <div class="row">
-        <div class="col-sm-6">
-          <h1 id="pad-select-header1"> Select Launch Pads</h1>
-          <div id="map"></div>
-        </div>
-        <div class="col-sm-6">
-          <h1 id="pad-select-header2"> Select Rockets</h1>
-         <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example" id="list-content">
-             </div>
-             <button type="button" class="btn btn-danger btn-lg" id="save-btn"
-          data-toggle="modal" data-target="#exampleModal">Save Rockets</button>
-        </div>
-    </div>
-
-<!-- Rocket Select Checkbox -->
-
-    <!-- <div class="row">
-      <div class="col-sm-3"></div>
       <div class="col-sm-6">
+        <h1 id="pad-select-header1"> Select Launch Pads</h1>
+        <div id="map"></div>
+      </div>
+      <div class="col-sm-6">
+        <h1 id="pad-select-header2"> Select Rockets</h1>
         <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example" id="list-content">
         </div>
-        <button type="button" class="btn btn-danger btn-lg" id="save-btn"
-                data-toggle="modal" data-target="#exampleModal">Save Rockets</button>
+        <button type="button" class="btn btn-danger btn-lg" id="save-btn" data-toggle="modal"
+          data-target="#exampleModal">Save Rockets</button>
       </div>
-      <div class="col-sm-3"></div>
-    </div> -->
+    </div>
+
   </div>
 
-<!-- Footer -->
+  <!-- Footer -->
 
   <div class="footer">
-        <p>@2019 launchABILITY</p>
-      </div>
+    <p>@2019 launchABILITY</p>
+  </div>
 
 
   <!-- Optional JavaScript -->

@@ -1,6 +1,3 @@
-// console.log("app.js is working");
-
-// Initialize Firebase
 var config = {
   apiKey: "AIzaSyAvp5DXwstL8tSCTh5OtFVSC-XazUNU5_8",
   authDomain: "spacex-cc85a.firebaseapp.com",
@@ -13,36 +10,9 @@ firebase.initializeApp(config);
 
 var dataRef = firebase.database();
 
-//   var provider = new firebase.auth.GoogleAuthProvider();
-
-//   firebase.auth().signInWithPopup(provider).then(function(result) {
-//     // This gives you a Google Access Token. You can use it to access the Google API.
-//     var token = result.credential.accessToken;
-//     // The signed-in user info.
-//     var user = result.user;
-
-//     console.log(user.displayName);
-//     // ...
-//   }).catch(function(error) {
-//     // Handle Errors here.
-//     console.log("error");
-//     console.log(error.message);
-//     var errorCode = error.code;
-//     var errorMessage = error.message;
-//     // The email of the user's account used.
-//     var email = error.email;
-//     // The firebase.auth.AuthCredential type that was used.
-//     var credential = error.credential;
-//     // ...
-//   });  
-
-
-
 var s = Snap("#map");
 
 var loadPromises = [
-  // loadSVG("/assets/images/falconheavy.svg"),
-  // loadSVG("/assets/images/fire.svg")
   loadSVG("./assets/images/map.svg")
 ];
 
@@ -52,15 +22,11 @@ Promise.all(loadPromises).then(function(results) {
   for (var i = 0; i < results.length; ++i) {
     var svg = results[i];
     s.append(svg);
-    // s.attr({viewBox:0+","+0+","+300+","+300});
-    
   }
 
 
 var vandenburgclickCallback = function(event) {
-  // alert("CALIFORNIA");
-  
-  
+
   $.ajax({
     type: 'GET',
     url: "https://launchlibrary.net/1.4/launch?next=5&locationid=100"
@@ -77,15 +43,10 @@ var vandenburgclickCallback = function(event) {
     $("#list-content").prepend(rocketDiv);
     $("#list-content").prepend($("<h3>").text("Vandenburg AFB, CA"));
   });
-
-
-
 };
 
 var wallopsclickCallback = function(event) {
-  // alert("CALIFORNIA");
-  
-  
+
   $.ajax({
     type: 'GET',
     url: "https://launchlibrary.net/1.4/launch?next=5&locationid=109"
@@ -103,15 +64,10 @@ var wallopsclickCallback = function(event) {
 
   });
 
-
 };
 
-
-
 var canaveralclickCallback = function(event) {
-  // alert("CALIFORNIA");
-  
-  
+
   $.ajax({
     type: 'GET',
     url: "https://launchlibrary.net/1.4/launch?next=5&locationid=84&locationid=87"
@@ -131,18 +87,6 @@ var canaveralclickCallback = function(event) {
 
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 s.select("#canaveral").mouseover(function(){
 
@@ -165,32 +109,13 @@ s.select("#vandenburg").mouseover(function(){
   this.attr({ transform: 's1' });
 });
 
-
-// var bbox = s.getBBox();
-//     var viewBox = bbox.x+' '+bbox.y+' '+bbox.width+' '+ bbox.height;
-//     s.attr({
-//      viewBox: viewBox
-//   })
-
-
 console.log(s.select("#Vandenburg"));
 s.select("#vandenburg").click(vandenburgclickCallback);
 s.select("#wallops").click(wallopsclickCallback);
 s.select("#canaveral").click(canaveralclickCallback);
-
-
-
-
 });
 
-
-
-
-
-
-
 var authenticateduser;
-
 
 // var querystring = "https://launchlibrary.net/1.4/launch?"
 // var location;
@@ -203,74 +128,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     // No user is signed in.
   }
 });
-// var user = firebase.auth().currentUser;
-// // alert(user.displayName);
-// console.log(sessionStorage.getItem("user"));
-$("#pad-select-1").on("click", function () {
-  // location="&next=5&locationid=87";
-  // querystring+=location;
-  // console.log(querystring);
-
-  $.ajax({
-    type: 'GET',
-    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=87"
-
-  }).then(function (response) {
-    console.log(response);
-    var rocketDiv = $("<div>");
-    response.launches.forEach(function (launch) {
-
-      $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
-
-    });
-    $("#list-content").prepend(rocketDiv);
-    $("#list-content").prepend($("<h3>").text("Cape Canaveral, FL"));
-  });
-});
-$("#pad-select-2").on("click", function () {
-  // location="&next=5&locationid=87";
-  // querystring+=location;
-  // console.log(querystring);
-
-  $.ajax({
-    type: 'GET',
-    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=166"
-
-  }).then(function (response) {
-    console.log(response);
-    var rocketDiv = $("<div>");
-    response.launches.forEach(function (launch) {
-
-      $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
-    });
-    // $("#list-content").prepend("<h2>").text
-    $("#list-content").prepend(rocketDiv);
-    $("#list-content").prepend($("<h3>").text("Onenui Station, Mahia Peninsula, New Zealand"));
-  });
-});
-
-$("#pad-select-3").on("click", function () {
-  // location="&next=5&locationid=87";
-  // querystring+=location;
-  // console.log(querystring);
-
-  $.ajax({
-    type: 'GET',
-    url: "https://launchlibrary.net/1.4/launch?next=5&locationid=109"
-
-  }).then(function (response) {
-    console.log(response);
-    var rocketDiv = $("<div>");
-    response.launches.forEach(function (launch) {
-
-      $(rocketDiv).append($("<p>").html('<input type="checkbox" class="checkbox" value="' + launch.id + '" name=" ' + launch.id + '">' + launch.name + '</input>'));
-    });
-    $("#list-content").prepend(rocketDiv);
-    $("#list-content").prepend($("<h3>").text("Wallops Island, VA"));
-
-  });
-});
-
 
 var rocketIDs = [];
 $("#save-btn").on("click", (event) => {
@@ -286,8 +143,6 @@ $("#save-btn").on("click", (event) => {
     rocketIDs=snapshot.val().rocketID
     // }
 
-  // alert("rocket(s) saved! (change me later)");
-  
   });
 
 
