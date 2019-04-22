@@ -1,21 +1,20 @@
-
-  .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 30px;
-    background-color:rgb(32, 32, 32);
-    color: white;
-    text-align: center;
-    font-size: 15px;
-    padding-top: 5px;
-    margin-top: 20px;
-  }
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-color: rgb(32, 32, 32);
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  padding-top: 5px;
+  margin-top: 20px;
+}
 
 #login-body {
-    color: whitesmoke;
-    background-color: black;
+  color: whitesmoke;
+  background-color: black;
 }
 
 #dashboard-body {
@@ -23,7 +22,6 @@
   color: white;
   font-family: 'Play', sans-serif;
   text-align: center;
-
 }
 
 #settings-body {
@@ -50,14 +48,13 @@
   border-color: red; */
 }
 
-.modal-content{
-  background-color:rgb(51, 51, 51);
+.modal-content {
+  background-color: rgb(51, 51, 51);
   color: white;
   border-style: solid;
   border-width: 2px;
   border-color: red;
 }
-
 
 #home-body {
   color: whitesmoke;
@@ -67,33 +64,32 @@
 }
 
 #login-btn-active {
-  color: rgb(245,60,32);
+  color: rgb(245, 60, 32);
   background-color: white;
-  border-color:rgb(245,60,32);
+  border-color: rgb(245, 60, 32);
   border-width: 2px;
 }
 
 #settings-btn-active {
-  color: rgb(245,60,32);
+  color: rgb(245, 60, 32);
   background-color: white;
-  border-color:rgb(245,60,32);
+  border-color: rgb(245, 60, 32);
   border-width: 2px;
 }
 
 #dashboard-btn-active {
-  color: rgb(245,60,32);
+  color: rgb(245, 60, 32);
   background-color: white;
-  border-color:rgb(245,60,32);
+  border-color: rgb(245, 60, 32);
   border-width: 2px;
 }
 
 #home-btn-active {
-  color: rgb(245,60,32);
+  color: rgb(245, 60, 32);
   background-color: white;
-  border-color:rgb(245,60,32);
+  border-color: rgb(245, 60, 32);
   border-width: 2px;
 }
-
 
 #launch-btn {
   width: 100%;
@@ -104,26 +100,22 @@
   font-family: 'Orbitron', sans-serif;
 }
 
-
-.navbar{
+.navbar {
   background-color: black;
   font-family: 'Orbitron', sans-serif;
   padding-bottom: 2px;
 }
 
-
 #logo {
-  height:50px;
+  height: 50px;
   margin-left: 40%;
 }
-
 
 #list-example {
   height: 100%;
   width: 30%;
   overflow-y: scroll;
   float: left;
-
 }
 
 #list-content {
@@ -131,7 +123,7 @@
   width: 100%;
   overflow-y: scroll;
   float: left;
-  background-color:bisque;
+  background-color: bisque;
   opacity: 0.9;
   color: blue;
   border-style: solid;
@@ -142,11 +134,11 @@
 }
 
 .list-text {
-  color:black;
+  color: black;
 }
 
 .list-group-item {
-  background-color:bisque;
+  background-color: bisque;
   opacity: 0.9;
   border-style: solid;
   border-width: 2px;
@@ -161,7 +153,6 @@
 
 #twitter-header {
   text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
-
 }
 
 #selected-name {
@@ -172,13 +163,11 @@
   text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
   text-align: center;
   margin-bottom: -30px;
-
 }
 
 #pad-select-header2 {
   text-shadow: -1px 0 darkblue, 0 1px darkblue, 1px 0 darkblue, 0 -1px darkblue;
   text-align: center;
-  
 }
 
 #twitter-box1 {
@@ -211,7 +200,7 @@
 
 #wiki-links {
   float: left;
-  background-color:white;
+  background-color: white;
   margin-bottom: 0px;
   border-style: solid;
   border-width: 2px;
@@ -219,14 +208,10 @@
   border-radius: 3px;
 }
 
-  
-
 #map {
- width: 100%;
- height: 600px;
-
- }
-
+  width: 100%;
+  height: 600px;
+}
 
 #save-btn {
   margin-top: 10px;
@@ -235,20 +220,19 @@
   margin-right: 30%;
 }
 
-#rocket-feed{
+#rocket-feed {
   width: 100%;
   height: 100%;
 }
 
 #rocket-card {
-border-style: solid;
-border-width: 3px;
-border-color: steelblue;
-overflow-y: scroll;
+  border-style: solid;
+  border-width: 3px;
+  border-color: steelblue;
+  overflow-y: scroll;
 }
 
-
-.card-deck{
+.card-deck {
   margin: 0 auto;
   margin-bottom: 200px;
   margin-left: 20%;
@@ -313,14 +297,13 @@ overflow-y: scroll;
   font-size: 15px;
 }
 
-
-.card{
+.card {
   color: black;
   max-height: 400px;
   max-width: 300px;
 }
 
-.card-img-top{
+.card-img-top {
   height: 100%;
   object-fit: cover;
   border-style: solid;
@@ -328,14 +311,13 @@ overflow-y: scroll;
   border-color: steelblue;
 }
 
-#load-more-btn{
+#load-more-btn {
   float: right;
 }
 
-svg{
+svg {
   margin: 0 auto;
 }
-
 
 .card-footer {
   margin-top: 40px;
@@ -344,21 +326,17 @@ svg{
   background-color: black;
 }
 
-
-#load-more-btn{
+#load-more-btn {
   float: right;
 }
 
-#map svg{
+#map svg {
   margin: 0 auto;
-
   width: 100%;
   height: 100%;
-
 }
 
-#map{
- 
+#map {
   margin: 0 auto;
   text-align: center;
   height: 500px;
@@ -388,10 +366,11 @@ svg{
   min-width: 100%;
   min-height: 100%;
   -webkit-transform: translate(-50%, -50%);
-     -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
+
 .fullscreen-bg__video {
   position: absolute;
   top: 50%;
@@ -401,38 +380,38 @@ svg{
   min-width: 100%;
   min-height: 100%;
   -webkit-transform: translate(-50%, -50%);
-     -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 @media (max-width: 767px) {
   #settings-body {
     background-image: url("https://i.ytimg.com/vi/MxyO8JqVI-0/maxresdefault.jpg");
-    background-repeat:   no-repeat;
+    background-repeat: no-repeat;
     background-position: center center;
   }
   #home-body {
     background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
-    background-repeat:   no-repeat;
+    background-repeat: no-repeat;
     background-position: center center;
   }
   #dashboard-body {
     background-image: url("https://wallpapercave.com/wp/wp2376722.jpg");
-    background-repeat:   no-repeat;
+    background-repeat: no-repeat;
     background-position: center center;
   }
   .fullscreen-bg__video {
-      display: none;
+    display: none;
   }
 }
 
-
-.card-img-top:hover{
+.card-img-top:hover {
   opacity: 0.8;
   cursor: pointer;
 }
-#launch{
+
+#launch {
   height: 80%;
   width: auto;
   z-index: -1;
@@ -440,15 +419,16 @@ svg{
   position: absolute;
   bottom: 0;
 }
-svg{
+
+svg {
   height: 300;
   width: 300;
 }
 
-.remove{
-  width:20px;
+.remove {
+  width: 20px;
   position: absolute;
-  top:-8px;
-  right:-8px;
-  z-index:2;
+  top: -8px;
+  right: -8px;
+  z-index: 2;
 }

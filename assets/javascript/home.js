@@ -10,18 +10,13 @@ firebase.initializeApp(config);
 
 var dataRef = firebase.database();
 
-// var querystring = "https://launchlibrary.net/1.4/launch?"
-// var location;
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     authenticateduser = user;
-    // User is signed in.
-    console.log(user);
 
     var starCountRef = dataRef.ref('/users/' + user.uid);
     starCountRef.on('value', function (snapshot) {
       console.log(snapshot.val().rocketID);
-
 
       querystring = "https://launchlibrary.net/1.4/launch?fields=rocket,location,windowstart,name&id="
       snapshot.val().rocketID.forEach(function (element) {
@@ -94,14 +89,10 @@ firebase.auth().onAuthStateChanged(function (user) {
       console.log(starCountRef.child('rocketID').child(keyref));
       starCountRef.child('rocketID').child(key[1]).remove();
       // starCountRef.child('rocketID').child(keyref).remove();
-      debugger;
+      // debugger;
       // window.location.reload();
     });
   } else {
     // No user is signed in.
   }
-  console.log(starCountRef);
 });
-//
-
-// });
