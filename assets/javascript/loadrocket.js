@@ -3,10 +3,10 @@ $.urlParam = function (name) {
     return results[1] || 0;
 }
 try {
-    console.log(sessionStorage.getItem("user"));
+    sessionStorage.getItem("user");
 }
 catch{ console.log("UsernameError") }
-console.log($.urlParam('id'));
+
 
 var countdown, distance, launchTime;
 
@@ -35,7 +35,7 @@ $.ajax({
     type: 'GET',
     url: "https://launchlibrary.net/1.4/launch?fields=location,mission,rocket,windowstart&id=" + $.urlParam('id')
 }).then(function (response) {
-    console.log(response);
+
 
     launchTime = (response.launches[0].windowstart);
 
@@ -70,25 +70,25 @@ $.ajax({
           },
         url:"https://en.wikipedia.org/w/api.php?action=opensearch&search='+wikipage+'&limit=1&format=json"
     }).then(function(response){
-console.log(response);
+
     })
 
       $.getJSON('https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&&inprop=url&gsrsearch='+wikipage+'&limit=1&callback=?', function(data) {
-    console.log(data);
+
    
     for(x in data.query.pages){
-        console.log(x.title);
+        
         
     }
 
-    console.log(Object.values(data.query.pages).forEach(function(element){
-        console.log(element.title);
+    Object.values(data.query.pages).forEach(function(element){
+        
         var wiki=$("#wiki-links");
        var link= $("<a>").text(element.title + " || ");
         link.attr("href", "https://en.wikipedia.org/wiki/"+element.title)
         link.addClass("wikiTag");
        wiki.append(link);
-    }))
+    })
     
 });
 
