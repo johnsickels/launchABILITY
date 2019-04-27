@@ -43,9 +43,7 @@ Promise.all(loadPromises).then(function (results) {
   rocket = s.select("#rocket");
   fire = s.select("#test");
   fire2 = s.select("#test4");
-  console.log(fire);
-
-  console.log("app.js is still working");
+ 
   $("#launch-btn").on("click", function () {
 
 
@@ -75,7 +73,7 @@ Promise.all(loadPromises).then(function (results) {
 
 
     }
-    // s.transform("t"+$(window).width/2+",0");
+    
     s.animate({ transform: "t" + $(window).width() / 2 + ",-1500" }, 3000, mina.linear, function () {
 
       if (authenticateduser != null) {
